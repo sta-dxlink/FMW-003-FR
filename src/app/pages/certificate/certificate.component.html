@@ -1,0 +1,238 @@
+<div class="contain plusCon">
+  <div class="n1 Spink">Certificate</div>
+  <div class="explenation">
+    To be issued a Certificate of Participation for accreditation purposes, you
+    must complete:
+    <ul>
+      <li>
+        A case:
+        <ul>
+          <li>Watch Case 1, Case 2, Case 3, or Case 4 videos</li>
+          <li>Complete the associated interactive questions</li>
+        </ul>
+      </li>
+      <li>Evaluation</li>
+      <li>
+        Please note, you will receive credits based on the number of cases that
+        you complete (4 videos = 0.5 credits)
+      </li>
+    </ul>
+    Upon completion you can then click on the “CERTIFICATE” button below to see
+    your personalized certificate which you can download or print and save for
+    your records. You can see what you have completed by scrolling to “PROGESS
+    TRACKER” below.
+  </div>
+  <div class="buttonzy">
+    <button
+      id="f1st"
+      mat-button
+      type="submit"
+      class="log"
+      (click)="downloadPDF()"
+    >
+      <!-- [disabled]="!certificate" -->
+
+      CERTIFICATE
+    </button>
+  </div>
+
+  <h1 id="n1">PROGESS TRACKER</h1>
+  <h1 id="n2">CASE COMPLETION</h1>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" id="Case">CASE 1</th>
+          <th scope="col">Q1</th>
+          <th scope="col">Q2</th>
+          <th scope="col">Q3</th>
+          <th scope="col">Q4</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Completion status</th>
+          <td>
+            <mat-icon *ngIf="this.Completed[0][0]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[0][1]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[0][2]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[0][3]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" id="Case">CASE 2</th>
+          <th scope="col">Q1</th>
+          <th scope="col">Q2</th>
+          <th scope="col">Q3</th>
+          <th scope="col">Q4</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Completion status</th>
+          <td>
+            <mat-icon *ngIf="this.Completed[1][0]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[1][1]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[1][2]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[1][3]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" id="Case">CASE 3</th>
+          <th scope="col">Q1</th>
+          <th scope="col">Q2</th>
+          <th scope="col">Q3</th>
+          <th scope="col">Q4</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Completion status</th>
+          <td>
+            <mat-icon *ngIf="this.Completed[2][0]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[2][1]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[2][2]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[2][3]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" id="Case">CASE 4</th>
+          <th scope="col">Q1</th>
+          <th scope="col">Q2</th>
+          <th scope="col">Q3</th>
+          <th scope="col">Q4</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Completion status</th>
+          <td>
+            <mat-icon *ngIf="this.Completed[3][0]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[3][1]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[3][2]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+          <td>
+            <mat-icon *ngIf="this.Completed[3][3]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" id="Case">EVALUATION FORM</th>
+          <th scope="col">Evaluation</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Completion status</th>
+          <td>
+            <mat-icon *ngIf="this.Completed[4][1]"
+              >check_circle_outline</mat-icon
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div
+  id="certificate_template"
+  class="certificate-section"
+  style="display: none"
+>
+  <img
+    src=".\assets\imgs\MicrosoftTeams-image.png"
+    alt="Certificate Online"
+  />
+  <!-- size change so i have to cahngethe scss -->
+  <span id="name">{{ user.firstName }} {{ user.lastName }}</span>
+  <span id="date">{{ dateOfCompletion | date : "longDate" }}</span>
+  <span id="hours">{{ hours }}</span>
+</div>

@@ -1,0 +1,141 @@
+.comitte {
+  background-image: linear-gradient(to right, #014f72, #0077a0);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vw;
+  padding-bottom: 6vw;
+}
+
+.speaker-rectangle {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 85%;
+}
+
+.speaker-square {
+  color: white;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  img {
+    width: 130px;
+    padding-bottom: 13px;
+  }
+  p {
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    //line-height: 0.6;
+  }
+  :nth-child(3),
+  :nth-child(4) {
+    font-weight: 300;
+  }
+}
+
+.objective {
+  background-image: url("../../../assets/imgs/canvas-background.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+// Oct	Dec	Hex	HTML
+// 023423	10003	0x2713	&#10003;
+ul {
+  width: 67%;
+  line-height: 1;
+  font-size: 20px;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  column-gap: 1em;
+  div {
+    font-size: 5vw;
+    color: #904465;
+  }
+}
+
+.patientCases {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-left: 5.4%;
+  padding-right: 5.4%;
+  padding-top: 3vw;
+  padding-bottom: 4vw;
+  background-image: linear-gradient(to right, #014f72, #0077a0);
+}
+
+.cases {
+  
+  width: 85%;
+  padding-top: 2.2vw;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  > div {
+    width: 200px;
+    cursor: pointer;
+  }
+}
+
+.cases img {
+  width: 100%;
+  object-fit: cover;
+  border: none;
+  padding: 0;
+}
+
+.cases .bottom {
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  h1 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+  }
+  //padding-top: 1vw;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 550px) {
+  ul {
+    width: 100%;
+  }
+  ul li p::before {
+    content: "\2713"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #904465; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    font-size: 6vw;
+    width: 1em; /* Also needed for space (tweak if needed) */
+    height: 0em;
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+    // margin-top: 1em;
+  }
+
+  li {
+    div {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,480 @@
+.land {
+  padding-top: 2.1vw;
+  padding-right: 3vw;
+  padding-left: 3vw;
+  // height: fit-content;
+  //height: min-content;
+  //background-color: rgb(139, 65, 65);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../../../assets/imgs/background.png");
+}
+.background {
+  position: absolute;
+  // margin-left: -3vw;
+  //margin-top: -2.1vw;
+  z-index: 0;
+  height: 100%;
+  object-fit: contain;
+}
+.links {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  width: 100%;
+  font-weight: 700;
+  font-size: 19px;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  column-gap: 56px;
+}
+
+.links a {
+  color: #0077a0;
+}
+
+.links a:active,
+.links a,
+.links a:hover,
+.links a:link,
+.links a::after {
+  text-decoration: none;
+  position: relative;
+}
+
+.links a:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: -5px;
+  /****** 
+   optional values below 
+   ******/
+  /* center - (optional) use with adjusting width   */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 0%;
+  opacity: 0;
+  background: #0077a0;
+  /* optional animation */
+  transition: width 0.5s ease-in-out, opacity 0.4s linear;
+}
+
+.links a:hover:after {
+  width: 100%;
+  opacity: 1;
+  transition: width 0.8s ease-in-out, opacity 0.6s linear;
+}
+
+.writting {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 18vw;
+  padding-right: 9vw;
+  padding-bottom: 10%;
+}
+.text {
+  width: 33.3vw;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.text h1 {
+  font-family: "Roboto Serif", serif;
+  font-size: 2vw;
+  line-height: 1.4;
+  font-weight: 700;
+  font-style: italic;
+  color: #904465;
+  width: 100%;
+  border-bottom: 3px solid #904465;
+  text-align: justify;
+  text-justify: inter-word;
+  mix-blend-mode: difference;
+  filter: invert(100%);
+}
+
+.text img {
+  width: 100%;
+  mix-blend-mode: difference;
+  filter: invert(100%);
+}
+
+.text p {
+  font-size: 1.5vw;
+  font-family: "Mulish", sans-serif;
+  line-height: 1.2;
+  padding-bottom: 2vw;
+  text-align: justify;
+  text-justify: inter-word;
+  //background-color: white;
+  // filter: invert(100%);
+  color: black;
+  filter: invert(100%);
+  mix-blend-mode: difference;
+}
+
+.circle {
+  width: 30vw;
+  height: 30vw;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  row-gap: 10px;
+  column-gap: 30px;
+  width: 100%;
+}
+.smalltop {
+  padding: 2vw 4vw 1vw 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, #014f72, #0077a0);
+  .links a {
+    color: white;
+  }
+  .links a:after {
+    background: white;
+  }
+  img {
+    height: 8vw;
+  }
+  .left {
+    display: flex;
+    width: 88%;
+    justify-content: space-between;
+    > div {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin-top: 1vw;
+      h1 {
+        color: white;
+        font-size: 2.7vw;
+        font-weight: 600;
+      }
+      h2 {
+        font-family: "Roboto Serif", serif;
+        font-style: italic;
+        font-size: 1.4vw;
+        color: #dec7d1;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.directories {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #8f5270;
+  justify-content: center;
+  height: 6vw;
+  column-gap: 0.65vw;
+  box-shadow: 0px 0px 7px 0.5px rgb(46, 46, 46);
+  z-index: 3;
+}
+
+.directories a {
+  padding: 3vw;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1.5vw;
+  font-weight: 500;
+  line-height: 0;
+  color: inherit;
+  transition: all 1s ease-in-out;
+}
+
+.directories a:hover {
+  background-color: #b48595;
+  transition: all 1s ease;
+}
+
+.patient {
+  //padding-top: 5.5vw;
+  align-items: center;
+  background-color: #b48595;
+  height: 13vw;
+  h1{font-size: 2vw;}
+  p{font-size: 1vw;}
+  //column-gap: 6.7vw;
+  justify-content: space-between;
+  padding-left: 5.5vw;
+  padding-right: 5.5vw;
+  z-index: 2;
+  .image {
+    padding-right: 1vw;
+  }
+}
+
+.patient p {
+  font-size: 1vw;
+  //padding-left: 0.5vw;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.patient a {
+  width: 20vw;
+  padding: 0;
+  display: flex;
+}
+
+.patient a:hover {
+  text-decoration: underline;
+}
+
+.patient img {
+  height: 7.4vw;
+  width: 7.4vw;
+  padding: 0vw;
+}
+
+#mat {
+  display: none;
+}
+/*try to play with the transitions when it comes to the patient cases
+  but befora that make sure that the patients cases look good on mobile */
+// transition: width 0.5s ease-in-out, opacity 0.4s linear;
+
+ngb-progressbar {
+  border-radius: 0 !important;
+  border: #014f72 solid 3px;
+}
+
+
+//login template {
+button {
+  border: 0;
+}
+
+#action,
+mat-label {
+  font-family: "Orbitron", sans-serif;
+}
+
+mat-form-field {
+  width: 100%;
+  padding-right: 0%;
+  font-size: 2vw;
+}
+#spacetop {
+  margin-bottom: 0;
+}
+input {
+  font-size: 2vw;
+}
+#spacetop button {
+  padding: 2vw;
+}
+#action button,
+mat-form-field button {
+  font-size: 2vw;
+  /* Fallback: Set a background color. */
+  background-color: #904465;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(to right,#904465, #014f72, #0077a0);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  padding: 3vw;
+}
+
+mat-label {
+  /* Fallback: Set a background color. */
+  background-color: orange;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(to right,#904465, #014f72, #0077a0);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+//login template
+
+@media only screen and (max-width: 900px) {
+  
+.directories  {
+
+  height: 8vw;
+  #rect a{
+      padding: 4vw;
+  font-size: 3vw;
+  }
+
+
+}
+
+.patient {
+  height: 15vw;
+}
+}
+
+@media only screen and (max-width: 550px) {
+  .land {
+    background-size: cover;
+  }
+  .text h1 {
+    font-size: 30px;
+
+    text-align: right;
+    text-justify: inter-character;
+  }
+
+  .text p {
+    font-size: 20.5px;
+    text-justify: inter-character;
+  }
+
+  .patient {
+  h1{font-size: 8vw;}
+  p{font-size: auto;}
+}
+}
+
+@media only screen and (max-width: 500px) {
+  .land {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .writting {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .circle {
+    margin-top: 10%;
+    width: 40vw;
+    height: 40vw;
+  }
+
+  #mat {
+    display: block;
+    align-self: flex-start;
+    cursor: pointer;
+  }
+  .directories {
+    flex-flow: column nowrap;
+    height: fit-content;
+  }
+
+  #rect {
+    box-shadow: 0px 7px 7px 0.1px rgba(145, 144, 144, 0.363);
+  }
+
+  .directories a {
+    padding: 5vw;
+    font-size: 5vw;
+    width: 100%;
+    text-align: center;
+  }
+
+  .patient p {
+    font-size: 4vw;
+    padding-left: 0.5vw;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .patient img {
+    height: 30vw;
+    width: 30vw;
+  }
+
+  .patient a {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .smalltop {
+     padding: 4vw 5vw 10vw 5vw;
+    flex-flow: column;
+    align-items: center;
+
+    img {
+      height: 38vw;
+      width: 38vw;
+    }
+    .left {
+      width: 100%;
+      flex-flow: column;
+      align-items: center;
+       > div {
+         text-align: center;
+        h1{font-size: 8vw;}
+        h2{font-size: 6vw;}
+       }
+    }
+
+    .links{
+      justify-content: center;
+    }
+  }
+
+
+    //login template
+  mat-label {
+    padding-bottom: 10vw;
+  }
+
+  input {
+    padding-top: 10vw;
+  }
+  #action button,
+  mat-label,
+  input,
+  #spacetop {
+    font-size: 6vw;
+    line-height: 6vw;
+  }
+
+  #action button {
+    padding: 3vw;
+  }
+  #spacetop button {
+    padding: 3vw;
+    font-size: 6vw;
+    line-height: 6vw;
+  }
+  //login template
+}

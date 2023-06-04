@@ -1,0 +1,246 @@
+<div class="plusCon contain">
+  <div class="pageTitle">
+    <div class="n1 Mpink">EVALUATION</div>
+  </div>
+
+    <div class="question">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+      <li class="quest" *ngFor="let choice of multiple_choices" data-aos="fade-up">
+        <p
+        [innerHTML] =   choice.title 
+          style="
+            color: #904465;
+            border-bottom: 4px solid black;
+            width: fit-content;
+          "
+          *ngIf="choice.title"
+          
+        >
+        
+        </p>
+
+        <div class="options">
+          {{ choice.Q }} <br /><br />
+          <label class="container" data-aos="fade-up">
+            <input type="radio" name={{choice.number}} formControlName={{choice.number}} value={{choice.sa}}/>{{ choice.sa }}
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" data-aos="fade-up">
+            <input type="radio" name={{choice.number}} formControlName={{choice.number}} value={{choice.a}} />{{ choice.a }}
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" data-aos="fade-up">
+            <input type="radio" name={{choice.number}} formControlName={{choice.number}} value={{choice.n}}/>{{ choice.n }}
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" data-aos="fade-up">
+            <input type="radio" name={{choice.number}} formControlName={{choice.number}} value={{choice.d}} />{{ choice.d }}
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" *ngIf="choice.sd" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.sd}}/>{{ choice.sd }}
+            <span class="checkmark"></span>
+          </label>
+          <label class="container" *ngIf="choice.five" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.five}}/>{{ choice.five }}
+            <span class="checkmark"></span>
+          </label>
+             <label class="container" *ngIf="choice.six" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.six}}/>{{ choice.six }}
+            <span class="checkmark"></span>
+          </label>
+             <label class="container" *ngIf="choice.seven" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.seven}}/>{{ choice.seven }}
+            <span class="checkmark"></span>
+          </label>
+             <label class="container" *ngIf="choice.height" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.height}}/>{{ choice.height }}
+            <span class="checkmark"></span>
+          </label>
+             <label class="container" *ngIf="choice.nine" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.nine}}/>{{ choice.nine }}
+            <span class="checkmark"></span>
+          </label>
+             <label class="container" *ngIf="choice.ten" data-aos="fade-up">
+            <input type="radio" name={{choice.number}}  formControlName={{choice.number}} value={{choice.ten}}/>{{ choice.ten }}
+            <span class="checkmark"></span>
+          </label>
+
+         <mat-error  *ngIf="
+                        registerForm.controls[choice.number].hasError('required') && onSubmitpressed
+                      " class="text-danger"> <strong> **Required field**</strong></mat-error> 
+
+        </div>
+      </li>
+
+
+      <ol>
+        <li class="quest"  data-aos="fade-up">
+        <p>
+         2. Describe two positive features of this program:
+        </p>
+    
+        <div class="options">
+          1.
+            <mat-form-field>
+                <mat-label>1<sup>st</sup> Feature</mat-label>
+                <textarea name="q17" formControlName="q17" matInput  class="form-control" ></textarea>
+                <mat-error class="text-danger"><strong> **Required field**</strong></mat-error> 
+            </mat-form-field>
+        </div>
+
+        <div class="options">
+          2.
+            <mat-form-field>
+                <mat-label>2<sup>nd</sup> Feature</mat-label>
+                <textarea name="q18" formControlName="q18" matInput  class="form-control" ></textarea>
+                <mat-error class="text-danger"><strong> **Required field**</strong></mat-error> 
+            </mat-form-field>
+        </div>
+      </li>
+
+      <li class="quest"  data-aos="fade-up">
+        <p>
+        3. Would you change anything about the program? <i>If so, please explain.</i>
+        <br>   <br>  
+         <label class="container" >
+            <input type="radio" name="number3" (click)="quesionOptions(1,true)"  />Yes
+            <span class="checkmark"></span>
+          </label> 
+              <label class="container" >
+            <input type="radio" name="number3" (click)="quesionOptions(1,false)"    /> No
+            <span class="checkmark"></span>
+          </label>
+        </p>
+    
+        <div class="options" *ngIf="option1">
+            <mat-form-field>
+                <mat-label>Explain</mat-label>
+                <textarea  name="q19" formControlName="q19" matInput  class="form-control" ></textarea>
+                <mat-error class="text-danger"><strong> **Required field**</strong></mat-error> 
+                  <mat-error  *ngIf="
+                        registerForm.controls.q19.hasError('required') && onSubmitpressed
+                      " class="text-danger"><strong> **Required field**</strong></mat-error> 
+            </mat-form-field>
+        </div>
+      </li>
+
+      <li class="quest"  data-aos="fade-up">
+        <p>
+       4. What did you learn from this program that you plan to use in your practice?
+      
+        </p>
+    
+        <div class="options" >
+            <mat-form-field>
+                <mat-label>Explain</mat-label>
+                <textarea  name="q20" formControlName="q20" matInput  class="form-control" ></textarea>
+                <mat-error class="text-danger"><strong> **Required field**</strong></mat-error> 
+            </mat-form-field>
+        </div>
+      </li>
+
+      <li class="quest"  data-aos="fade-up">
+        <p>
+        5. Please list any other related topics that you would like to see covered in future learning programs:
+        </p>
+    
+        <div class="options" >
+            <mat-form-field>
+                <mat-label>Explain</mat-label>
+                <textarea  name="q21" formControlName="q21" matInput  class="form-control" ></textarea>
+                
+            </mat-form-field>
+        </div>
+      </li>
+
+      <li class="quest"  data-aos="fade-up">
+        <p>
+        6. Are there any gaps in care or other challenges that you would like to discuss?
+        </p>
+    
+        <div class="options" >
+            <mat-form-field>
+                <mat-label>Explain</mat-label>
+                <textarea  name="q22" formControlName="q22" matInput  class="form-control" ></textarea>
+                
+            </mat-form-field>
+        </div>
+      </li>
+
+      <li class="quest"  data-aos="fade-up">
+        <p>
+        7. Did you perceive any degree of bias in any part of the program? <i>If yes, please describe</i>
+        <br>   <br>  
+         <label class="container" >
+            <input type="radio" name="number7" (click)="quesionOptions(2,true)"  />Yes
+            <span class="checkmark"></span>
+          </label> 
+              <label class="container" >
+            <input type="radio" name="number7" (click)="quesionOptions(2,false)"    /> No
+            <span class="checkmark"></span>
+          </label>
+        </p>
+    
+        <div class="options" *ngIf="option2">
+            <mat-form-field>
+                <mat-label>Describe</mat-label>
+                <textarea  name="q23" formControlName="q23" matInput  class="form-control" ></textarea>
+                <mat-error class="text-danger"><strong> **Required field**</strong></mat-error> 
+                  <mat-error  *ngIf="
+                        registerForm.controls.q23.hasError('required') && onSubmitpressed
+                      " class="text-danger"><strong> **Required field**</strong></mat-error> 
+            </mat-form-field>
+        </div>
+      </li>
+
+      <li class="quest"  data-aos="fade-up">
+        <p>
+       8. Did the activity respect the CQDPCM Code of Ethics <a href="http://cqdpcm.ca" target="_blank" rel="noopener noreferrer">(http://cqdpcm.ca)</a> ? 
+      <br>   <br>    
+      </p>
+    
+          <label class="container" >
+            <input type="radio" name="q24" formControlName="q24" value="Yes" />Yes
+            <span class="checkmark"></span>
+          </label> 
+          <label class="container" >
+            <input type="radio" name="q24" formControlName="q24" value="No"     /> No
+            <span class="checkmark"></span>
+          </label>
+
+          <mat-error  *ngIf="
+                        registerForm.controls.q24.hasError('required') && onSubmitpressed
+                      " class="text-danger"><strong> **Required field**</strong></mat-error> 
+      </li>
+
+
+       <li class="quest"  data-aos="fade-up">
+        <p>
+       9. General comments and suggestions:
+        </p>
+    
+        <div class="options" >
+            <mat-form-field>
+                <mat-label>Comments</mat-label>
+                <textarea  name="q25" formControlName="q25" matInput  class="form-control" ></textarea> 
+            </mat-form-field>
+        </div>
+      </li>
+    </ol>
+
+    <div class="buttonzy">
+          <button id="f1st" mat-button type="submit" class="log">SUBMIT</button>
+        </div>
+    </form>
+  </div>
+  <div class="BN" *ngIf="submitted">
+    <button (click)="CONTINE()">
+      CONTINUE TO CERTIFICATE
+      <img
+        src="./assets/imgs/right-arrow.png"
+        alt="right-arrow.png"
+      />
+    </button>
+  </div>
+</div>

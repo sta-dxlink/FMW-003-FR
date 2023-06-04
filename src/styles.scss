@@ -1,0 +1,452 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+.contain {
+  background-image: url("./assets/imgs/canvas-background.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+  padding: 3vw 3vw 3vw 3vw;
+  display: flex;
+  flex-flow: column;
+}
+button{
+  cursor: pointer;
+}
+
+.plusCon{
+  padding: 3vw 7.5vw 3vw 7.5vw !important;
+}
+
+.log {
+  border: 0;
+  background-color: #0077a0;
+  color: white;
+  font-size: 1.6vw;
+  border-radius: 50px;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  width: 12vw;
+  font-weight: 500;
+  mix-blend-mode: difference;
+  filter: invert(100%);
+  // width: 180px;
+  // padding-left: 38px;
+  // padding-right: 38px;
+}
+
+.n1 {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  // vertical-align: middle;
+  //background-color: red;
+  font-size: 1.9vw;
+  padding-top: 2.5vw;
+  padding-bottom: 4vw;
+  height: 0;
+  font-weight: 900;
+  line-height: 0;
+
+  width: 43vw;
+  font-family: "Mulish", sans-serif !important;
+}
+.white {
+  color: #904465;
+  background-image: url("./assets/imgs/brush-stroke-white.png");
+}
+
+.blue {
+  padding-top: 2.2vw;
+  padding-bottom: 4.3vw;
+  color: white;
+  background-image: url("./assets/imgs/brush-stroke-blue.png");
+}
+
+.Mpink {
+  background-image: url("./assets/imgs/brush-stroke-pink-medium.png");
+  width: 30vw ;
+  color: white;
+}
+.Spink {
+  background-image: url("./assets/imgs/brush-stroke-pink-small.png");
+  width: 20vw ;
+  color: white;
+}
+
+.Lpink {
+  background-image: url("./assets/imgs/brush-stroke-pink-large.png");
+  color: white;
+}
+
+.Ppink {
+  width: 25vw;
+  padding-top: 4vw;
+  padding-bottom: 2.5vw;
+  background-image: url("./assets/imgs/brush-stroke-pink-paintbrush.png");
+  color: white;
+}
+
+.pageTitle{
+  display: flex;
+  align-items: center;
+  padding-bottom: 5vw;
+  margin-left: -4vw;
+  h1{
+    color: #014f72;
+    font-size: 2vw;
+    font-weight: 500;
+    margin-top: 3vw;
+  }
+}
+
+.vid{
+    width: fit-content;
+  border: 0.2vw solid #014f72;
+  background-color: #014f72;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  width: 76vw;
+  height: 35vw;
+}
+
+.BN {
+  width: 76vw;
+  padding-top: 3vw;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+
+  img{
+     height: auto;
+  width: 4.5vw;
+  }
+
+  button{
+  background-color: transparent;
+  border: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.7vw;
+  font-weight: 800;
+  column-gap: 20px;
+  color: #014f72;
+  }
+}
+
+.BN a:active,
+.BN a:hover,
+.BN a:link,
+.BN a::after {
+  text-decoration: none;
+}
+
+.question{
+  img{
+      border: 0.2vw solid #b48595;
+    width: 50%;
+     box-shadow: 0px 0px 7px 0.5px rgb(46, 46, 46);
+  }
+
+  li.quest {
+  list-style: none;
+  line-height: 1.9vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+  width: 90%;
+  margin-top: 1vw;
+  p{
+    padding-top: 3vw;
+  }
+}
+}
+
+label {
+  //margin-left: -20px;
+  padding-bottom: 1.5vw;
+  font-weight: 500;
+  font-size: 1.5vw;
+  line-height: 1.9vw;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  margin-top: 0 !important;
+  margin-left: 2.6vw !important;
+  margin-right: 0 !important;
+  //margin-bottom: 12px;
+  cursor: pointer;
+
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  //bottom: 1vw;
+  top: -0.3vw;
+  left: -2.6vw;
+  height: 2vw;
+  width: 2vw;
+  background-color: rgba(255, 255, 255, 0);
+  //border-radius: 50%;
+  border: 4px solid #b48595;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark{
+  background-color: #9044655e;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #b48595;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.buttonzy {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+
+.buttonzy > button {
+  border: 0;
+  transition: all 1s ease-in-out;
+}
+
+.buttonzy > button:hover {
+  // background-color: #ac4b05;
+    mix-blend-mode:normal;
+  filter: invert(0%);
+}
+
+.answers{
+   background:  linear-gradient(to right, #014f72, #0077a0);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+
+//spinner color
+.mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle, .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke:#904465 !important;
+}
+
+
+.mat-mdc-snack-bar-container {
+    --mdc-snackbar-supporting-text-font: Roboto, sans-serif;
+    --mdc-snackbar-supporting-text-line-height: 1.4;
+    --mdc-snackbar-supporting-text-size: 25px;
+    --mdc-snackbar-supporting-text-weight: 400;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+   .n1 {
+    font-size: 3.5vw;
+    padding-top: 2.5vw;
+    padding-bottom: 5.4vw;
+    width: 60vw !important;
+  }
+
+  .Mpink {
+    padding-top: 5.4vw;
+    background-size: cover;
+  }
+
+  .Ppink{
+    padding-top: 9vw;
+    background-size: fill;
+  }
+
+  .Lpink {
+    padding-top:4vw;
+    font-size: 3.3vw;
+  }
+
+  .pageTitle{
+    
+    h1{
+      font-size: 3vw;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+
+    .contain {
+    align-items: center;
+  }
+  .log {
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 180px;
+    // padding-left: 38px;
+    // padding-right: 38px;
+  }
+
+  .n1 {
+    font-size: 5vw;
+    padding-top: 4vw;
+    padding-bottom: 9vw;
+    width: 100vw !important;
+  }
+
+  .Mpink {
+    padding-top: 9vw;
+    background-size: cover;
+  }
+
+  .Ppink{
+    padding-top: 20vw;
+    background-size: fill;
+  }
+  .pageTitle{
+    flex-flow: column;
+    margin-left: 0vw;
+    h1{
+      font-size: 9vw;
+      text-align: center;
+    }
+  }
+
+    iframe {
+    width: 100%;
+    height: 46%;
+  }
+
+    .vid {
+    margin-top: 6vw;
+  }
+
+
+  .BN {
+
+  img{
+     height: auto;
+    width: 15vw;
+  }
+
+  button{
+     font-size: 5vw;
+    line-height: 5vw;
+  }
+
+  
+}
+
+.question{
+  img{
+    width: 100%;
+  }
+
+  li.quest {
+   font-size: 4vw;
+    line-height: 4vw;
+    padding-left: 4vw;
+    width: 100%;
+    margin-top: 4vw;
+}
+}
+
+label {
+ font-size: 4vw;
+    line-height: 4vw;
+    margin-left: 0vw;
+    margin-bottom: 6vw;
+    margin-top: 6vw;
+}
+
+
+
+
+
+/* Create a custom radio button */
+.checkmark {
+   position: absolute;
+    //bottom: 1vw;
+    top: -0.5vw;
+    left: -8vw;
+    height: 8vw;
+    width: 8vw;
+}
+
+
+
+
+.buttonzy {
+  align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+.buttonzy > button:hover {
+  // background-color: #ac4b05;
+    mix-blend-mode:normal;
+  filter: invert(0%);
+}
+}
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+/* Absolute Center Spinner */
+.loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Transparent Overlay */
+  .loading-indicator:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }

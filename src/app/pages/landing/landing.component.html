@@ -1,0 +1,37 @@
+<div class="comitte">
+  <div class="n1 white" data-aos="zoom-in-up">Scientific Planning Committee</div>
+  <div class="speaker-rectangle" data-aos="fade-up">
+      <div class="speaker-square" *ngFor="let member of committee">
+    <img src="{{member.img}}" alt="">
+    <p>{{member.name}}</p>
+    <p [innerHTML]=member.profession></p>
+  </div>
+  </div>
+</div>
+  <div class="objective">
+    <div class="n1 blue" data-aos="zoom-in-up">
+      Learning objective 
+    </div>
+    <ul>
+      <li data-aos="fade-up" *ngFor="let lo of lo">
+        <div>&#10003;</div><p>
+            {{lo.txt}}
+        </p>
+      
+      </li>
+    </ul>
+  </div>
+
+  <div class="patientCases" data-aos="fade-up" data-aos-easing="ease-in-out-back">
+  <div class="n1 white" data-aos="zoom-in-up">Cases</div>
+  <div class="cases"  data-aos-easing="ease-in-out-back">
+    <div data-aos="fade-up" *ngFor="let case of Cases" (click) = "sendTo(case.href)">
+      <img src={{case.img}} alt="" />
+      <div class="bottom" >
+        <h1>{{case.h1}}</h1>
+        {{case.p}}
+      </div>
+    </div>
+ 
+  </div>
+</div>

@@ -1,0 +1,126 @@
+<div class="plusCon contain">
+  <div class="pageTitle">
+    <div class="n1 Ppink">Case 3</div>
+    <h1>The Value of CGM in Managing People with Diabetes Using Insulin</h1>
+  </div>
+
+  <div *ngFor="let case of Case">
+  <div @slideAnimation *ngIf="count == case.num1">
+    <div class="vid">
+      <iframe
+        [src]="'https://player.vimeo.com/video/'+ case.video | safe"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen=""
+      ></iframe>
+    </div>
+    <div class="BN">
+      <button (click)="BACK()">
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+      </button>
+      <button (click)="CONTINE()">
+        NEXT
+
+        <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
+      </button>
+    </div>
+  </div>
+
+  <div @slideAnimation *ngIf="count == case.num1 + 1" >
+    <div class="question">
+      <img src={{case.src}} alt="" />
+      <li class="quest">
+        <p [innerHTML]=case.Question>
+          
+        </p>
+      </li>
+      <form @slideAnimation  [formGroup]="registerForm" (ngSubmit)="onSubmit(case.num1)" *ngIf="!submitted[case.num2]">
+        <li class="quest">
+          <div class="options">
+            <label class="container" *ngFor="let question of case.choices">
+              <input *ngIf="!case.name"
+                type="checkbox"
+                (change)="onChange(question.choice, $any($event.target)?.checked, case.num1)"
+              />
+              <input
+              *ngIf="case.name"
+                type="radio"
+                name={{case.name}}
+            formControlName = {{case.name}}
+            value={{question.choice}}
+              />
+              <span [innerHTML]=question.choice></span>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </li>
+        <div class="buttonzy">
+          <button id="f1st" mat-button type="submit" class="log">SUBMIT</button>
+        </div>
+      </form>
+
+         <li class="quest" *ngIf="submitted[case.num2]">
+        <p>
+         <span class="answers">Your answer is:</span>  <br>
+         <span [innerHTML]=storageService.addSpaceAfterComma(Answer[case.num2])></span>
+         <br>
+         <br>
+          <span [innerHTML]=AnswerPro(case.num1) class="corrected"></span>
+        <br>
+         <br>
+         <span class="answers">Your peers chose:</span> 
+          <br>
+         <br>
+        </p>
+            <div class="container" *ngFor="let question of case.choices; let i = index">
+              <div *ngIf="count ==  1">         
+                <span   [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q1PeerOccurence[i]/Q1PeerAnswers.length | percent:'2.2-2'}}</span>
+              </div>
+              <div *ngIf="count ==  3" >
+               <span  [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q2PeerOccurence[i]/Q2PeerAnswers.length | percent:'2.2-2'}}</span>
+              </div>
+              <div *ngIf="count ==  5">
+               <span  [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q3PeerOccurence[i]/Q3PeerAnswers.length | percent:'2.2-2'}}</span>
+              </div>
+              <div *ngIf="count ==  7">
+                <span  [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q4PeerOccurence[i]/Q4PeerAnswers.length | percent:'2.2-2'}}</span>
+              </div>             
+
+        </div>
+      </li>
+    </div>
+
+    <div class="BN">
+      <button (click)="BACK()">
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+      </button>
+      <button (click)="CONTINE(case.num1)">
+        NEXT
+
+        <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
+      </button>
+    </div>
+  </div>
+  </div>
+
+    <div @slideAnimation *ngIf="count ==8">
+    <div class="vid">
+      <iframe
+        [src]="'https://player.vimeo.com/video/816289725' | safe"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen=""
+      ></iframe>
+    </div>
+    <div class="BN">
+      <button (click)="BACK()">
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+      </button>
+      <button (click)="CONTINE()">
+        NEXT
+
+        <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
+      </button>
+    </div>
+  </div>
+</div>

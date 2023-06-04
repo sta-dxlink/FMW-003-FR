@@ -1,0 +1,140 @@
+<div class="land" *ngIf="bigbar">
+  <div class="links"><a href="Help">HELP</a><a href="">FRANÇAIS</a></div>
+  <div class="writting">
+    <div class="text">
+      <img src=".\assets\imgs\painting-the-patient-journey.png" alt="" />
+      <h1>
+        Type 2 Diabetes, the Role of Insulin and the Implications of
+        Time-in-Range
+      </h1>
+      <p>
+        This program is aimed at primary care physicians who are managing
+        patients with type 2 diabetes. It will discuss how to optimize glycemic
+        control using basal insulin and when to intensify therapy.
+      </p>
+      <div class="buttons">
+        <button class="log" (click)="Register()">REGISTER</button>
+        <button class="log" (click)="checkLogin()">LOGIN</button>
+      </div>
+    </div>
+    <img src=".\assets\imgs\painter.png" alt="" class="circle" />
+  </div>
+</div>
+
+<div *ngIf="smallbar">
+  <div class="smalltop">
+    <div class="left">
+      <img src=".\assets\imgs\painter.png" alt="" />
+      <div>
+        <h1>Painting the Patient Journey</h1>
+        <h2>
+          Type 2 Diabetes, the Role of Insulin and the <br />
+          Implications of Time-in-Range
+        </h2>
+      </div>
+    </div>
+    <div class="links"><a href="Help">HELP</a><a href="">FRANÇAIS</a></div>
+  </div>
+  <div class="directories" *ngIf="isLoggedIn == 'true'" >
+    <mat-icon (click)="toggleMenu()" id="mat">reorder</mat-icon>
+    <div class="directories" id="rect" *ngIf="menu" [@slideAnimation]>
+      <a href="Home" id="HOME">HOME</a
+      ><a
+        style="cursor: pointer"
+        (click)="togglePatientMenu()"
+        id="PATIENT_CASES"
+        >CASES</a
+      ><a href="Evaluation" id="EVALUATION">EVALUATION</a
+      ><a href="Certificate" id="CERTIFICATE">CERTIFICATE</a>
+    </div>
+  </div>
+
+  <div class="patient directories" *ngIf="patient" [@slideAnimation]>
+    <a *ngFor="let PCase of cases; let i = index" href="{{ PCase.href }}" id="{{ PCase.id }}"
+      ><div class="image">
+        <img src="{{ PCase.img }}" alt="" />
+        <ngb-progressbar type="primary" [value]="25 + (75*(Percentage[i]/100) )">{{Percentage[i]}}%</ngb-progressbar>
+      </div>
+      <div>
+        <h1>{{ PCase.h1 }}</h1>
+        <p>{{ PCase.p }}</p>
+      </div></a
+    >
+  </div>
+</div>
+
+<ng-template #loginTemplate>
+  <form class="casslescoui..." [formGroup]="registerForm" #loginForm="ngForm">
+    <div mat-dialog-content id="dialogContent">
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="email"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+        />
+        <mat-icon
+          matSuffix
+          *ngIf="
+            (registerForm.controls.email.hasError('email') ||
+              registerForm.controls.email.hasError('required')) &&
+            registerForm.controls.email.touched
+          "
+          >error_outline</mat-icon
+        >
+        <mat-error
+          *ngIf="
+            registerForm.controls.email.hasError('email') &&
+            !registerForm.controls.email.hasError('required')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="registerForm.controls.email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field id="spacetop">
+        <mat-label>Enter your password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          [(ngModel)]="user.password"
+          name="password"
+        />
+        <mat-icon
+          matSuffix
+          *ngIf="
+            registerForm.controls.password.hasError('required') &&
+            registerForm.controls.password.touched
+          "
+          >error_outline</mat-icon
+        >
+        <mat-error *ngIf="registerForm.controls.password.hasError('required')"
+          >Enter a password</mat-error
+        >
+        <!-- <div style="color: red;" *ngIf="submitted && !registerForm.controls.email.errors && !registerForm.controls.password.errors">Invalid email or password</div> -->
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions id="action">
+      <button mat-button (click)="forgotPass()">Forgot password ?</button>
+
+      <button mat-button id="login" (click)="onSubmit()">Login</button>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
+  </form>
+</ng-template>
