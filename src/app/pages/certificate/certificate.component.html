@@ -1,26 +1,26 @@
 <div class="contain plusCon">
-  <div class="n1 Spink">Certificate</div>
+  <div class="n1 Spink">Certificat</div>
   <div class="explenation">
-    To be issued a Certificate of Participation for accreditation purposes, you
-    must complete:
+    Pour obtenir un certificat de participation à des fins d'accréditation, vous
+    devez remplir les conditions suivantes :
     <ul>
       <li>
-        A case:
+        Un cas :
         <ul>
-          <li>Watch Case 1, Case 2, Case 3, or Case 4 videos</li>
-          <li>Complete the associated interactive questions</li>
+          <li>Regarder les vidéos du cas 1, du cas 2, du cas 3 ou du cas 4</li>
+          <li>Répondre aux questions interactives associées</li>
         </ul>
       </li>
-      <li>Evaluation</li>
+      <li>Compléter l'évaluation</li>
       <li>
-        Please note, you will receive credits based on the number of cases that
-        you complete (4 videos = 0.5 credits)
+        Veuillez noter que vous recevrez des crédits en fonction du nombre de
+        cas que vous aurez complétés (1 cas = 0,5 heure de crédits).
       </li>
     </ul>
-    Upon completion you can then click on the “CERTIFICATE” button below to see
-    your personalized certificate which you can download or print and save for
-    your records. You can see what you have completed by scrolling to “PROGESS
-    TRACKER” below.
+    Une fois que vous avez terminé, vous pouvez cliquer sur « Certificat » pour
+    voir votre certificat personnalisé que vous pouvez télécharger ou imprimer
+    et sauvegarder pour vos dossiers. Vous pouvez voir ce que vous avez accompli
+    en défilant jusqu'à "Suivi des progrès" ci-dessous.
   </div>
   <div class="buttonzy">
     <button
@@ -32,18 +32,18 @@
     >
       <!-- [disabled]="!certificate" -->
 
-      CERTIFICATE
+      CERTIFICAT
     </button>
   </div>
 
-  <h1 id="n1">PROGESS TRACKER</h1>
-  <h1 id="n2">CASE COMPLETION</h1>
+  <h1 id="n1">Suivi des progrès</h1>
+  <h1 id="n2">Achèvement du dossier</h1>
 
   <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" id="Case">CASE 1</th>
+          <th scope="col" id="Case">CAS 1</th>
           <th scope="col">Q1</th>
           <th scope="col">Q2</th>
           <th scope="col">Q3</th>
@@ -53,7 +53,7 @@
 
       <tbody>
         <tr>
-          <th scope="row">Completion status</th>
+          <th scope="row">État d'avancement</th>
           <td>
             <mat-icon *ngIf="this.Completed[0][0]"
               >check_circle_outline</mat-icon
@@ -83,7 +83,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" id="Case">CASE 2</th>
+          <th scope="col" id="Case">CAS 2</th>
           <th scope="col">Q1</th>
           <th scope="col">Q2</th>
           <th scope="col">Q3</th>
@@ -93,7 +93,7 @@
 
       <tbody>
         <tr>
-          <th scope="row">Completion status</th>
+          <th scope="row">État d'avancement</th>
           <td>
             <mat-icon *ngIf="this.Completed[1][0]"
               >check_circle_outline</mat-icon
@@ -123,7 +123,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" id="Case">CASE 3</th>
+          <th scope="col" id="Case">CAS 3</th>
           <th scope="col">Q1</th>
           <th scope="col">Q2</th>
           <th scope="col">Q3</th>
@@ -133,7 +133,7 @@
 
       <tbody>
         <tr>
-          <th scope="row">Completion status</th>
+          <th scope="row">État d'avancement</th>
           <td>
             <mat-icon *ngIf="this.Completed[2][0]"
               >check_circle_outline</mat-icon
@@ -163,7 +163,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" id="Case">CASE 4</th>
+          <th scope="col" id="Case">CAS 4</th>
           <th scope="col">Q1</th>
           <th scope="col">Q2</th>
           <th scope="col">Q3</th>
@@ -173,7 +173,7 @@
 
       <tbody>
         <tr>
-          <th scope="row">Completion status</th>
+          <th scope="row">État d'avancement</th>
           <td>
             <mat-icon *ngIf="this.Completed[3][0]"
               >check_circle_outline</mat-icon
@@ -203,14 +203,14 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" id="Case">EVALUATION FORM</th>
-          <th scope="col">Evaluation</th>
+          <th scope="col" id="Case">FORMULAIRE D'ÉVALUATION</th>
+          <th scope="col">Évaluation</th>
         </tr>
       </thead>
 
       <tbody>
         <tr>
-          <th scope="row">Completion status</th>
+          <th scope="row">État d'avancement</th>
           <td>
             <mat-icon *ngIf="this.Completed[4][1]"
               >check_circle_outline</mat-icon
@@ -227,12 +227,11 @@
   class="certificate-section"
   style="display: none"
 >
-  <img
-    src=".\assets\imgs\MicrosoftTeams-image.png"
-    alt="Certificate Online"
-  />
+  <img src=".\assets\imgs\MicrosoftTeams-image.png" alt="Certificat Online" />
   <!-- size change so i have to cahngethe scss -->
   <span id="name">{{ user.firstName }} {{ user.lastName }}</span>
-  <span id="date">{{ dateOfCompletion | date : "longDate" }}</span>
+  <span id="date">{{
+    currentDate$ | async | date : dateFormat : "GMT" : locale
+  }}</span>
   <span id="hours">{{ hours }}</span>
 </div>

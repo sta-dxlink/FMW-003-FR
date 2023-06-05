@@ -1,102 +1,143 @@
 <div class="plusCon contain">
   <div class="pageTitle">
-    <div class="n1 Ppink">Case 2</div>
-    <h1>Utilizing Insulin in Older Adults</h1>
+    <div class="n1 Ppink">Cas 2</div>
+    <h1>Utilisation de l’insuline chez les personnes âgées</h1>
   </div>
 
   <div *ngFor="let case of Case">
-  <div @slideAnimation *ngIf="count == case.num1">
-    <div class="vid">
-      <iframe
-        [src]="'https://player.vimeo.com/video/'+ case.video | safe"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen=""
-      ></iframe>
-    </div>
-    <div class="BN">
-      <button (click)="BACK()">
-        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
-      </button>
-      <button (click)="CONTINE()">
-        NEXT
+    <div @slideAnimation *ngIf="count == case.num1">
+      <div class="vid">
+        <iframe
+          [src]="'https://player.vimeo.com/video/' + case.video | safe"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen=""
+        ></iframe>
+      </div>
+      <div class="BN">
+        <button (click)="BACK()">
+          <img
+            src="./assets/imgs/left-arrow.png"
+            alt="left-arrow.png"
+          />PRÉCÉDENT
+        </button>
+        <button (click)="CONTINE()">
+          SUIVANT
 
-        <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
-      </button>
+          <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
+        </button>
+      </div>
     </div>
-  </div>
 
- <div @slideAnimation *ngIf="count == case.num1 + 1" >
-    <div class="question">
-      <img src={{case.src}} alt="" />
-      <li class="quest">
-        <p [innerHTML]=case.Question>
-          
-        </p>
-      </li>
-      <form @slideAnimation  [formGroup]="registerForm" (ngSubmit)="onSubmit(case.num1)" *ngIf="!submitted[case.num2]">
+    <div @slideAnimation *ngIf="count == case.num1 + 1">
+      <div class="question">
+        <img src="{{ case.src }}" alt="" />
         <li class="quest">
-          <div class="options">
-            <label class="container" *ngFor="let question of case.choices">
-              <input
-                type="checkbox"
-                (change)="onChange(question.choice, $any($event.target)?.checked, case.num1)"
-              />
-              <span [innerHTML]=question.choice></span>
-              <span class="checkmark"></span>
-            </label>
+          <p [innerHTML]="case.Question"></p>
+        </li>
+        <form
+          @slideAnimation
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit(case.num1)"
+          *ngIf="!submitted[case.num2]"
+        >
+          <li class="quest">
+            <div class="options">
+              <label class="container" *ngFor="let question of case.choices">
+                <input
+                  type="checkbox"
+                  (change)="
+                    onChange(
+                      question.choice,
+                      $any($event.target)?.checked,
+                      case.num1
+                    )
+                  "
+                />
+                <span [innerHTML]="question.choice"></span>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </li>
+          <div class="buttonzy">
+            <button id="f1st" mat-button type="submit" class="log">
+              SOUMETTRE
+            </button>
+          </div>
+        </form>
+
+        <li class="quest" *ngIf="submitted[case.num2]">
+          <p>
+            <span class="answers">Votre réponse :</span> <br />
+            <span
+              [innerHTML]="storageService.addSpaceAfterComma(Answer[case.num2])"
+            ></span>
+            <br />
+            <br />
+            <span [innerHTML]="AnswerPro(case.num1)" class="corrected"></span>
+            <br />
+            <br />
+            <span class="answers">Vos pairs ont choisi:</span>
+            <br />
+            <br />
+          </p>
+          <div
+            class="container"
+            *ngFor="let question of case.choices; let i = index"
+          >
+            <div *ngIf="count == 1">
+              <span [innerHTML]="question.choice"></span
+              ><span class="answers"
+                >&emsp;{{
+                  Q1PeerOccurence[i] / Q1PeerAnswers.length | percent : "2.2-2"
+                }}</span
+              >
+            </div>
+            <div *ngIf="count == 3">
+              <span [innerHTML]="question.choice"></span
+              ><span class="answers"
+                >&emsp;{{
+                  Q2PeerOccurence[i] / Q2PeerAnswers.length | percent : "2.2-2"
+                }}</span
+              >
+            </div>
+            <div *ngIf="count == 5">
+              <span [innerHTML]="question.choice"></span
+              ><span class="answers"
+                >&emsp;{{
+                  Q3PeerOccurence[i] / Q3PeerAnswers.length | percent : "2.2-2"
+                }}</span
+              >
+            </div>
+            <div *ngIf="count == 7">
+              <span [innerHTML]="question.choice"></span
+              ><span class="answers"
+                >&emsp;{{
+                  Q4PeerOccurence[i] / Q4PeerAnswers.length | percent : "2.2-2"
+                }}</span
+              >
+            </div>
           </div>
         </li>
-        <div class="buttonzy">
-          <button id="f1st" mat-button type="submit" class="log">SUBMIT</button>
-        </div>
-      </form>
+      </div>
 
-         <li class="quest" *ngIf="submitted[case.num2]">
-        <p>
-         <span class="answers">Your answer is:</span>  <br>
-         <span [innerHTML]=storageService.addSpaceAfterComma(Answer[case.num2])></span>
-           <br>
-         <br>
-          <span [innerHTML]=AnswerPro(case.num1) class="corrected"></span>
-          <br>
-         <br>
-         <span class="answers">Your peers chose:</span> 
-          <br>
-         <br>
-        </p>
-            <div class="container" *ngFor="let question of case.choices; let i = index">
-              <div *ngIf="count ==  1">         
-                <span   [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q1PeerOccurence[i]/Q1PeerAnswers.length | percent:'2.2-2'}}</span>
-              </div>
-              <div *ngIf="count ==  3" >
-               <span  [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q2PeerOccurence[i]/Q2PeerAnswers.length | percent:'2.2-2'}}</span>
-              </div>
-              <div *ngIf="count ==  5">
-               <span  [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q3PeerOccurence[i]/Q3PeerAnswers.length | percent:'2.2-2'}}</span>
-              </div>
-              <div *ngIf="count ==  7">
-                <span  [innerHTML]=question.choice></span><span class=" answers">&emsp;{{Q4PeerOccurence[i]/Q4PeerAnswers.length | percent:'2.2-2'}}</span>
-              </div>             
+      <div class="BN">
+        <button (click)="BACK()">
+          <img
+            src="./assets/imgs/left-arrow.png"
+            alt="left-arrow.png"
+          />PRÉCÉDENT
+        </button>
+        <button (click)="CONTINE(case.num1)">
+          SUIVANT
 
-        </div>
-      </li>
-    </div>
-
-    <div class="BN">
-      <button (click)="BACK()">
-        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
-      </button>
-      <button (click)="CONTINE(case.num1)">
-        NEXT
-
-        <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
-      </button>
+          <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
+        </button>
+      </div>
     </div>
   </div>
-  </div>
 
-    <div @slideAnimation *ngIf="count ==8">
+  <div @slideAnimation *ngIf="count == 8">
     <div class="vid">
       <iframe
         [src]="'https://player.vimeo.com/video/816289391' | safe"
@@ -107,10 +148,10 @@
     </div>
     <div class="BN">
       <button (click)="BACK()">
-        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />PRÉCÉDENT
       </button>
       <button (click)="CONTINE()">
-        NEXT
+        SUIVANT
 
         <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
       </button>

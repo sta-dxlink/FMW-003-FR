@@ -1,7 +1,7 @@
 <div class="plusCon contain">
   <div class="pageTitle">
-    <div class="n1 Ppink">Case 3</div>
-    <h1>The Value of CGM in Managing People with Diabetes Using Insulin</h1>
+    <div class="n1 Ppink">Cas 3</div>
+    <h1>La valeur de la SCG dans le traitement des personnes diabétiques sous insuline </h1>
   </div>
 
   <div *ngFor="let case of Case">
@@ -16,10 +16,10 @@
     </div>
     <div class="BN">
       <button (click)="BACK()">
-        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />PRÉCÉDENT
       </button>
       <button (click)="CONTINE()">
-        NEXT
+        SUIVANT
 
         <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
       </button>
@@ -55,20 +55,20 @@
           </div>
         </li>
         <div class="buttonzy">
-          <button id="f1st" mat-button type="submit" class="log">SUBMIT</button>
+          <button id="f1st" mat-button type="submit" class="log">SOUMETTRE</button>
         </div>
       </form>
 
          <li class="quest" *ngIf="submitted[case.num2]">
         <p>
-         <span class="answers">Your answer is:</span>  <br>
+         <span class="answers">Votre réponse :</span>  <br>
          <span [innerHTML]=storageService.addSpaceAfterComma(Answer[case.num2])></span>
          <br>
          <br>
           <span [innerHTML]=AnswerPro(case.num1) class="corrected"></span>
         <br>
          <br>
-         <span class="answers">Your peers chose:</span> 
+         <span class="answers">Vos pairs ont choisi:</span> 
           <br>
          <br>
         </p>
@@ -92,10 +92,10 @@
 
     <div class="BN">
       <button (click)="BACK()">
-        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />PRÉCÉDENT
       </button>
       <button (click)="CONTINE(case.num1)">
-        NEXT
+        SUIVANT
 
         <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
       </button>
@@ -114,10 +114,10 @@
     </div>
     <div class="BN">
       <button (click)="BACK()">
-        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />BACK
+        <img src="./assets/imgs/left-arrow.png" alt="left-arrow.png" />PRÉCÉDENT
       </button>
       <button (click)="CONTINE()">
-        NEXT
+        SUIVANT
 
         <img src="./assets/imgs/right-arrow.png" alt="right-arrow.png" />
       </button>

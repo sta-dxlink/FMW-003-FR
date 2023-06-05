@@ -98,7 +98,7 @@ export class AuthService {
     let program = {} as Program;
     this.getToken();
     program.token = this.tokenData.token;
-    program.program_id = 'FMW_003';
+    program.program_id = 'FMW_003_FR';
     let body = JSON.stringify(program);
     return this.http.post(`${this.baseUrl}/updatedTimeSpent`, body).pipe(
       map((res: any) => {
@@ -121,7 +121,7 @@ export class AuthService {
   submitEvaluation(question: Evaluation, programs_section_id: any) {
     question.token = this.tokenData.token;
     question.programs_section_id = programs_section_id;
-    question.question_id = 'FMW_003_E_0';
+    question.question_id = 'FMW_003_FR_E_0';
     question.number_of_questions = 25;
 
     let body = JSON.stringify(question);
@@ -171,8 +171,8 @@ export class AuthService {
 
   updateProgramCompletion() {
     this.evaluation.token = this.tokenData.token;
-    this.evaluation.program_id = 'FMW_003';
-    this.evaluation.certificate_id = 'FMW_003';
+    this.evaluation.program_id = 'FMW_003_FR';
+    this.evaluation.certificate_id = 'FMW_003_FR';
     // console.log(evaluation);
     let body = JSON.stringify(this.evaluation);
     // console.log(body);
@@ -187,7 +187,7 @@ export class AuthService {
     let program = {} as Program;
     this.getToken();
     program.token = this.tokenData.token;
-    program.program_id = 'FMW_003';
+    program.program_id = 'FMW_003_FR';
     // program.program_username_id = "PFZ_057_Guest";
     // console.log(program.token);
     let body = JSON.stringify(program);

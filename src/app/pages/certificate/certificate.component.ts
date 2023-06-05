@@ -1,11 +1,18 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { first } from 'rxjs';
+import {
+  Component,
+  ElementRef,
+  LOCALE_ID,
+  ViewChild,
+  Inject,
+} from '@angular/core';
+import { first, of } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 declare let html2pdf: any;
 // @ts-ignore
 import * as html2pdf from 'html2pdf.js';
 import { User } from 'src/app/components/models/user.models';
+import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-certificate',
   templateUrl: './certificate.component.html',
@@ -14,6 +21,9 @@ import { User } from 'src/app/components/models/user.models';
 export class CertificateComponent {
   user = {} as User;
   dateOfCompletion: any;
+  currentDate = new Date();
+  dateFormat = 'dd MMMM yyyy';
+  currentDate$ = of(formatDate(this.currentDate, this.dateFormat, this.locale));
   Completed: boolean[][] = new Array(5);
   // certificate = false;
   hours = 0;
@@ -21,7 +31,8 @@ export class CertificateComponent {
 
   constructor(
     public authService: AuthService,
-    public storageService: StorageService
+    public storageService: StorageService,
+    @Inject(LOCALE_ID) public locale: string = 'fr-FR' // Set locale to 'fr' for French
   ) {}
 
   ngOnInit(): void {
@@ -34,106 +45,106 @@ export class CertificateComponent {
     this.checkEvaluationCompletion();
     //q1
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_01',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_01',
       0,
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_02',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_02',
       0,
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_03',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_03',
       0,
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_04',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_04',
       0,
       3
     );
     //q2
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_01',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_01',
       1,
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_02',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_02',
       1,
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_03',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_03',
       1,
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_04',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_04',
       1,
       3
     );
     //q3
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_01',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_01',
       2,
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_02',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_02',
       2,
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_03',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_03',
       2,
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_04',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_04',
       2,
       3
     );
     //q4
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_01',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_01',
       3,
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_02',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_02',
       3,
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_03',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_03',
       3,
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_04',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_04',
       3,
       3
     );
-
-    //console.log(this.Completed);
+    this.dateOfCompletion = new Date();
+    console.log('the date is \n\n\n\n\n ', this.dateOfCompletion);
   }
 
   getUserDetails() {
@@ -148,10 +159,10 @@ export class CertificateComponent {
 
   updateCert() {
     console.log(this.Completed);
+
     if (this.Completed.some((row) => row.includes(true))) {
       console.log('Certificate updated');
       this.updateCerticate();
-      this.dateOfCompletion = new Date();
     }
   }
 
@@ -183,7 +194,7 @@ export class CertificateComponent {
           if (data.doctor_answer) {
             this.Completed[row][column] = true;
             this.updateCert();
-            if(this.Completed[row].every((value) => value === true)){
+            if (this.Completed[row].every((value) => value === true)) {
               this.hours += 0.5;
             }
           }
@@ -195,7 +206,7 @@ export class CertificateComponent {
 
   checkEvaluationCompletion() {
     this.authService
-      .checkQuestionCompletion('FMW_003_Eval_01', 'FMW_003_E_01')
+      .checkQuestionCompletion('FMW_003_FR_Eval_01', 'FMW_003_FR_E_01')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -211,7 +222,6 @@ export class CertificateComponent {
   @ViewChild('certificatetemplate') pdfTable!: ElementRef;
 
   downloadPDF() {
-
     this.showCertificate = true;
     var nativeElement = document.getElementById(
       'certificate_template'

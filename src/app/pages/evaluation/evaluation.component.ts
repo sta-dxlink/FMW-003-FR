@@ -14,7 +14,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-import { Evallq, mEvalo } from 'src/app/components/things';
+import { mEvalo } from 'src/app/components/things';
 import AOS from 'aos';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { AuthService } from 'src/app/services/auth.service';
@@ -42,7 +42,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class EvaluationComponent {
   multiple_choices = mEvalo;
-  long_format = Evallq;
   registerForm!: FormGroup;
   submitted = false;
   onSubmitpressed = false;
@@ -79,11 +78,11 @@ export class EvaluationComponent {
       q16: ['', [Validators.required]],
       q17: ['', [Validators.required]],
       q18: ['', [Validators.required]],
-      q19: ['No', [this.requiredIfOption1True()]],
+      q19: ['Non', [this.requiredIfOption1True()]],
       q20: ['', [Validators.required]],
       q21: ['', ],
       q22: ['', ],
-      q23: ['No', [this.requiredIfOption2True()]],
+      q23: ['Non', [this.requiredIfOption2True()]],
       q24: ['', [Validators.required]],
       q25: [''],
     });
@@ -120,7 +119,7 @@ export class EvaluationComponent {
 
   checkEvaluationCompletion() {
     this.authService
-      .checkQuestionCompletion('FMW_003_Eval_01', 'FMW_003_E_01')
+      .checkQuestionCompletion('FMW_003_FR_Eval_01', 'FMW_003_FR_E_01')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -133,7 +132,7 @@ export class EvaluationComponent {
   }
 
   CONTINE() {
-    window.open('Certificate', '_self');
+    window.open('Certificat', '_self');
   }
 
   onSubmit() {
@@ -142,11 +141,13 @@ export class EvaluationComponent {
 
     // stop the process here if form is invalid
     if (this.registerForm.invalid) {
-      this.sendNotification('make sure to answer all required fields');
+      this.sendNotification(
+        'Veillez à répondre à tous les champs obligatoires'
+      );
       return;
     }
     this.authService
-      .submitEvaluation(this.registerForm.value, 'FMW_003_Eval_01')
+      .submitEvaluation(this.registerForm.value, 'FMW_003_FR_Eval_01')
       .pipe(first())
       .subscribe((data) => {
         if (data.status == 'submitted') {
@@ -154,7 +155,7 @@ export class EvaluationComponent {
         }
       });
     this.submitted = true;
-    window.open('Certificate', '_self');
+    window.open('Certificat', '_self');
   }
 
   sendNotification(text: string) {

@@ -86,29 +86,29 @@ export class NavComponent implements OnInit, AfterViewChecked {
   ) {}
 
   ngAfterViewChecked(): void {
-    if (this.url == '/Home') {
+    if (this.url == '/Accueil') {
       var Pcase = document.getElementById('HOME');
       Pcase!.style.backgroundColor = '#B48595';
-    } else if (this.url.includes('PatientCases')) {
+    } else if (this.url.includes('PatientCas')) {
       var Pcase = document.getElementById('PATIENT_CASES');
       Pcase!.style.backgroundColor = '#B48595';
 
-      if (this.url == '/PatientCases/case1') {
+      if (this.url == '/PatientCas/cas1') {
         var under = document.getElementById('case1');
         if (under != null) {
           under.style.textDecoration = 'underline';
         }
-      } else if (this.url == '/PatientCases/case2') {
+      } else if (this.url == '/PatientCas/cas2') {
         var under = document.getElementById('case2');
         if (under != null) {
           under.style.textDecoration = 'underline';
         }
-      } else if (this.url == '/PatientCases/case3') {
+      } else if (this.url == '/PatientCas/cas3') {
         var under = document.getElementById('case3');
         if (under != null) {
           under.style.textDecoration = 'underline';
         }
-      } else if (this.url == '/PatientCases/case4') {
+      } else if (this.url == '/PatientCas/cas4') {
         var under = document.getElementById('case4');
         if (under != null) {
           under.style.textDecoration = 'underline';
@@ -117,7 +117,7 @@ export class NavComponent implements OnInit, AfterViewChecked {
     } else if (this.url == '/Evaluation') {
       var Pcase = document.getElementById('EVALUATION');
       Pcase!.style.backgroundColor = '#B48595';
-    } else if (this.url == '/Certificate') {
+    } else if (this.url == '/Certificat') {
       var Pcase = document.getElementById('CERTIFICATE');
       Pcase!.style.backgroundColor = '#B48595';
     }
@@ -153,86 +153,86 @@ export class NavComponent implements OnInit, AfterViewChecked {
 
     //q1
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_01',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_01',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_02',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_02',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_03',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_03',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_04',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_04',
       0
     );
     //q2
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_01',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_01',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_02',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_02',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_03',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_03',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_04',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_04',
       1
     );
     //q3
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_01',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_01',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_02',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_02',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_03',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_03',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_04',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_04',
       2
     );
     //q4
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_01',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_01',
       3
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_02',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_02',
       3
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_03',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_03',
       3
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_04',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_04',
       3
     );
   }
@@ -255,13 +255,13 @@ export class NavComponent implements OnInit, AfterViewChecked {
       });
     } else {
       this.zone.run(() => {
-        this.route.navigate(['/Home']);
+        this.route.navigate(['/Accueil']);
       });
     }
   }
 
   Register() {
-    window.open('https://dxlink.ca/register', '_blank');
+    window.open('https://dxlink.ca/register_fr', '_blank');
   }
 
   onSubmit() {
@@ -272,7 +272,7 @@ export class NavComponent implements OnInit, AfterViewChecked {
     // stop the process here if form is invalid
     if (this.registerForm.invalid) {
       this.storageService.sendNotification(
-        'Be sure to correctly enter your credentials'
+        'Veillez à saisir correctement vos données d\'identification.'
       );
       return;
     } else {
@@ -288,7 +288,7 @@ export class NavComponent implements OnInit, AfterViewChecked {
               this.loginDialogRef = this.dialog.closeAll();
               this.saveToken(this.token.token);
               this.zone.run(() => {
-                this.route.navigate(['/Home']);
+                this.route.navigate(['/Accueil']);
               });
             } else {
               this.storageService.sendNotification('Invalid credentials');
@@ -300,7 +300,7 @@ export class NavComponent implements OnInit, AfterViewChecked {
   }
 
   forgotPass() {
-    window.open('https://dxlink.ca/forgot_password', '_blank');
+    window.open('https://dxlink.ca/forgot_password_fr', '_blank');
   }
   saveToken(token: any) {
     this.storageService.setCookie(token);

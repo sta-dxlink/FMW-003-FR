@@ -13,16 +13,16 @@ import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'Home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'Help', component: HelpComponent },
+  { path: 'Accueil', component: HomeComponent },
+  { path: 'Aide', component: HelpComponent, canActivate: [AuthGuard] },
   {
-    path: 'PatientCases',
+    path: 'PatientCas',
     canActivate: [AuthGuard],
     children: [
-      { path: 'case1', component: Case1Component, canActivate: [AuthGuard] },
-      { path: 'case2', component: Case2Component, canActivate: [AuthGuard] },
-      { path: 'case3', component: Case3Component, canActivate: [AuthGuard] },
-      { path: 'case4', component: Case4Component, canActivate: [AuthGuard] },
+      { path: 'cas1', component: Case1Component, canActivate: [AuthGuard] },
+      { path: 'cas2', component: Case2Component, canActivate: [AuthGuard] },
+      { path: 'cas3', component: Case3Component, canActivate: [AuthGuard] },
+      { path: 'cas4', component: Case4Component, canActivate: [AuthGuard] },
     ],
   },
   {
@@ -31,16 +31,20 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'Certificate',
+    path: 'Certificat',
     component: CertificateComponent,
-    canActivate: [AuthGuard],
+     canActivate: [AuthGuard],
   },
 
-  { path: '**' || 'PatientCas', component: LandingComponent, canActivate: [AuthGuard] },
+  {
+    path: '**' || 'PatientCas',
+    component: LandingComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

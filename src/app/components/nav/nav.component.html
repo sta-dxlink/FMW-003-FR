@@ -1,20 +1,21 @@
 <div class="land" *ngIf="bigbar">
-  <div class="links"><a href="Help">HELP</a><a href="">FRANÇAIS</a></div>
+  <div class="links"><a href="Aide">AIDE</a><a href="">ENGLISH</a></div>
   <div class="writting">
     <div class="text">
       <img src=".\assets\imgs\painting-the-patient-journey.png" alt="" />
       <h1>
-        Type 2 Diabetes, the Role of Insulin and the Implications of
-        Time-in-Range
+        Le diabète de type 2, le rôle de l'insuline et les implications de
+        l'intervalle de temps
       </h1>
       <p>
-        This program is aimed at primary care physicians who are managing
-        patients with type 2 diabetes. It will discuss how to optimize glycemic
-        control using basal insulin and when to intensify therapy.
+        Ce programme est destiné aux médecins de soins primaires qui traitent
+        des patients atteints de diabète de type 2. Il y sera question de la
+        manière d’optimiser le contrôle glycémique à l’aide de l’insuline basale
+        et du moment où il convient d’intensifier le traitement.
       </p>
       <div class="buttons">
-        <button class="log" (click)="Register()">REGISTER</button>
-        <button class="log" (click)="checkLogin()">LOGIN</button>
+        <button class="log" (click)="Register()">S’ENREGISTRER</button>
+        <button class="log" (click)="checkLogin()">CONNEXION</button>
       </div>
     </div>
     <img src=".\assets\imgs\painter.png" alt="" class="circle" />
@@ -26,34 +27,41 @@
     <div class="left">
       <img src=".\assets\imgs\painter.png" alt="" />
       <div>
-        <h1>Painting the Patient Journey</h1>
+        <h1>Peindre le parcours du patient</h1>
         <h2>
-          Type 2 Diabetes, the Role of Insulin and the <br />
-          Implications of Time-in-Range
+          Le diabète de type 2, le rôle de l'insuline et<br />
+          les implications de l'intervalle de temps
         </h2>
       </div>
     </div>
-    <div class="links"><a href="Help">HELP</a><a href="">FRANÇAIS</a></div>
+    <div class="links"><a href="Aide">AIDE</a><a href="">ENGLISH</a></div>
   </div>
   <div class="directories" *ngIf="isLoggedIn == 'true'" >
     <mat-icon (click)="toggleMenu()" id="mat">reorder</mat-icon>
     <div class="directories" id="rect" *ngIf="menu" [@slideAnimation]>
-      <a href="Home" id="HOME">HOME</a
+      <a href="Accueil" id="HOME">ACCUEIL</a
       ><a
         style="cursor: pointer"
         (click)="togglePatientMenu()"
         id="PATIENT_CASES"
-        >CASES</a
-      ><a href="Evaluation" id="EVALUATION">EVALUATION</a
-      ><a href="Certificate" id="CERTIFICATE">CERTIFICATE</a>
+        >CAS</a
+      ><a href="Evaluation" id="EVALUATION">ÉVALUATION</a
+      ><a href="Certificat" id="CERTIFICATE">CERTIFICAT</a>
     </div>
   </div>
 
   <div class="patient directories" *ngIf="patient" [@slideAnimation]>
-    <a *ngFor="let PCase of cases; let i = index" href="{{ PCase.href }}" id="{{ PCase.id }}"
+    <a
+      *ngFor="let PCase of cases; let i = index"
+      href="{{ PCase.href }}"
+      id="{{ PCase.id }}"
       ><div class="image">
         <img src="{{ PCase.img }}" alt="" />
-        <ngb-progressbar type="primary" [value]="25 + (75*(Percentage[i]/100) )">{{Percentage[i]}}%</ngb-progressbar>
+        <ngb-progressbar
+          type="primary"
+          [value]="25 + 75 * (Percentage[i] / 100)"
+          >{{ Percentage[i] }}%</ngb-progressbar
+        >
       </div>
       <div>
         <h1>{{ PCase.h1 }}</h1>
@@ -67,7 +75,7 @@
   <form class="casslescoui..." [formGroup]="registerForm" #loginForm="ngForm">
     <div mat-dialog-content id="dialogContent">
       <mat-form-field>
-        <mat-label>Enter your email</mat-label>
+        <mat-label>Saisissez votre adresse e-mail</mat-label>
         <input
           matInput
           placeholder="pat@example.com"
@@ -91,15 +99,15 @@
             !registerForm.controls.email.hasError('required')
           "
         >
-          Please enter a valid email address
+          Veuillez saisir une adresse e-mail valide
         </mat-error>
         <mat-error *ngIf="registerForm.controls.email.hasError('required')">
-          Email is <strong>required</strong>
+          L'adresse électronique est <strong>obligatoire</strong>
         </mat-error>
       </mat-form-field>
 
       <mat-form-field id="spacetop">
-        <mat-label>Enter your password</mat-label>
+        <mat-label>Entrez votre mot de passe</mat-label>
         <input
           matInput
           [type]="hide ? 'password' : 'text'"
@@ -116,7 +124,7 @@
           >error_outline</mat-icon
         >
         <mat-error *ngIf="registerForm.controls.password.hasError('required')"
-          >Enter a password</mat-error
+          >Saisir un mot de passe</mat-error
         >
         <!-- <div style="color: red;" *ngIf="submitted && !registerForm.controls.email.errors && !registerForm.controls.password.errors">Invalid email or password</div> -->
         <button
@@ -131,10 +139,10 @@
       </mat-form-field>
     </div>
     <div mat-dialog-actions id="action">
-      <button mat-button (click)="forgotPass()">Forgot password ?</button>
+      <button mat-button (click)="forgotPass()">Mot de passe oublié ?</button>
 
-      <button mat-button id="login" (click)="onSubmit()">Login</button>
-      <button mat-button mat-dialog-close>Close</button>
+      <button mat-button id="login" (click)="onSubmit()">Connexion</button>
+      <button mat-button mat-dialog-close>Fermez</button>
     </div>
   </form>
 </ng-template>

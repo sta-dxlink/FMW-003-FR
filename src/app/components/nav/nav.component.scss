@@ -126,7 +126,7 @@
   flex-flow: row;
   justify-content: flex-end;
   row-gap: 10px;
-  column-gap: 30px;
+  column-gap: 1.5vw;
   width: 100%;
 }
 .smalltop {
@@ -157,6 +157,7 @@
         color: white;
         font-size: 2.7vw;
         font-weight: 600;
+        line-height: 1;
       }
       h2 {
         font-family: "Roboto Serif", serif;

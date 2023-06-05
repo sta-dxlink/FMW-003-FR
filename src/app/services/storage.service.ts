@@ -74,14 +74,14 @@ export class StorageService {
         },
         error: (e) => {
           this.sendNotification(
-            'Error submitting your response, please try again'
+            'Erreur dans l\'envoi de votre réponse, veuillez réessayer'
           );
           console.log(e);
         },
       });
 
               this.sendNotification(
-                'Click on the "NEXT" button to proceed to the next video'
+                'Cliquez sur le bouton "SUIVANT" pour passer à la vidéo suivante.'
               );
   }
 

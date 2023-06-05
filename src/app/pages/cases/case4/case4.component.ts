@@ -64,23 +64,23 @@ export class Case4Component {
     });
 
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_01',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_01',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_02',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_02',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_03',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_03',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_04',
-      'FMW_003_CASE4_04',
+      'FMW_003_FR_Case_04',
+      'FMW_003_FR_CASE4_04',
       3
     );
 
@@ -92,7 +92,7 @@ export class Case4Component {
 
   BACK() {
     if (this.count == 0) {
-      window.open('PatientCases/case3', '_self');
+      window.open('PatientCas/cas3', '_self');
     }
     this.count--;
   }
@@ -105,7 +105,7 @@ export class Case4Component {
       (this.Answer[0] && id == 0 && !this.submitted[0])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -116,7 +116,7 @@ export class Case4Component {
       (this.Answer[1] && id == 2 && !this.submitted[1])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -127,7 +127,7 @@ export class Case4Component {
       (this.Answer[2] && id == 4 && !this.submitted[2])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -138,7 +138,7 @@ export class Case4Component {
       (this.Answer[3] && id == 6 && !this.submitted[3])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -190,53 +190,53 @@ export class Case4Component {
 
     // stop the process here if form is invalid
     if (!this.registerForm.value.name.toString() && id == 0) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 0) {
       this.submitted[0] = true;
       this.Answer[0] = this.registerForm.value.name.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_04',
-        'FMW_003_CASE4_01',
+        'FMW_003_FR_Case_04',
+        'FMW_003_FR_CASE4_01',
         this.Answer[0],
         this.authService
       );
     }
     if (!this.registerForm.value.name2.toString() && id == 2) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 2) {
       this.submitted[1] = true;
       this.Answer[1] = this.registerForm.value.name2.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_04',
-        'FMW_003_CASE4_02',
+        'FMW_003_FR_Case_04',
+        'FMW_003_FR_CASE4_02',
         this.Answer[1],
         this.authService
       );
     }
     if (!this.registerForm.value.name3.toString() && id == 4) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 4) {
       this.submitted[2] = true;
       this.Answer[2] = this.registerForm.value.name3.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_04',
-        'FMW_003_CASE4_03',
+        'FMW_003_FR_Case_04',
+        'FMW_003_FR_CASE4_03',
         this.Answer[2],
         this.authService
       );
     }
     if (!this.registerForm.value.name4.toString() && id == 6) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 6) {
       this.submitted[3] = true;
       this.Answer[3] = this.registerForm.value.name4.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_04',
-        'FMW_003_CASE4_04',
+        'FMW_003_FR_Case_04',
+        'FMW_003_FR_CASE4_04',
         this.Answer[3],
         this.authService
       );
@@ -251,15 +251,15 @@ export class Case4Component {
           this.Answer[0].includes('c)') ||
           this.Answer[0].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is a). Increase insulin glargine dose.';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est a). Augmenter la dose d\'insuline glargine';
     }
     if (id == 2) {
       return this.Answer[1].includes('b)') &&
         this.Answer[1].includes('d)') &&
         !(this.Answer[1].includes('a)') || this.Answer[1].includes('c)'))
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answers are b) and d), add GLP-1 RA and discontinue sitagliptin and change sitagliptin and GLP-1 RA/insulin to fixed dose combination.';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'Les réponses correctes sont b) et d). Ajouter AR GLP-1 et arrêter la sitagliptine. Passer sitagliptine et AR GLP-1/insuline à des proportions fixes';
     }
     if (id == 4) {
       return this.Answer[2].includes('b)') &&
@@ -268,8 +268,8 @@ export class Case4Component {
           this.Answer[2].includes('c)') ||
           this.Answer[2].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is b), 30 units. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est b): 30 unités. ';
     }
     if (id == 6) {
       return this.Answer[3].includes('d)') &&
@@ -278,8 +278,8 @@ export class Case4Component {
           this.Answer[3].includes('b)') ||
           this.Answer[3].includes('c)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is d), provide the patient with some suggestions that may help her upset stomach, including: encouraging her to eat slow, avoid fried or spicy foods and to eat smaller portions.';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est d): L\'encourager à manger lentement, à éviter les aliments frits ou épicés et à manger de plus petites portions';
     }
 
     return '';
@@ -309,7 +309,7 @@ export class Case4Component {
 
   peerAnswersQuestion1() {
     this.authService
-      .peerAnswers('FMW_003_Case_04', 'FMW_003_CASE4_01')
+      .peerAnswers('FMW_003_FR_Case_04', 'FMW_003_FR_CASE4_01')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -339,7 +339,7 @@ export class Case4Component {
 
   peerAnswersQuestion2() {
     this.authService
-      .peerAnswers('FMW_003_Case_04', 'FMW_003_CASE4_02')
+      .peerAnswers('FMW_003_FR_Case_04', 'FMW_003_FR_CASE4_02')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -369,7 +369,7 @@ export class Case4Component {
 
   peerAnswersQuestion3() {
     this.authService
-      .peerAnswers('FMW_003_Case_04', 'FMW_003_CASE4_03')
+      .peerAnswers('FMW_003_FR_Case_04', 'FMW_003_FR_CASE4_03')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -399,7 +399,7 @@ export class Case4Component {
 
   peerAnswersQuestion4() {
     this.authService
-      .peerAnswers('FMW_003_Case_04', 'FMW_003_CASE4_04')
+      .peerAnswers('FMW_003_FR_Case_04', 'FMW_003_FR_CASE4_04')
       .pipe(first())
       .subscribe({
         next: (data) => {

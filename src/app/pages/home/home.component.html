@@ -1,45 +1,46 @@
 <div class="contain">
-  <div class="n1 Mpink">Program Overview</div>
+  <div class="n1 Mpink">Aperçu du programme</div>
   <p class="Overview">
-    This program is aimed at primary care physicians who are managing patients
-    with type 2 diabetes. It will discuss how to optimize glycemic control using
-    basal insulin and discuss when to intensify therapy.
+    Ce programme est destiné aux médecins de soins primaires qui traitent des
+    patients atteints de diabète de type 2. Il y sera question de la manière
+    d’optimiser le contrôle glycémique à l’aide de l’insuline basale et du
+    moment où il convient d’intensifier le traitement.
   </p>
 
-  <div class="n1 Lpink">Scientific Planning Committee</div>
+  <div class="n1 Lpink">Comité de planification scientifique</div>
 
-    <div class="speaker-rectangle" data-aos="fade-up">
-      <div class="speaker-square" *ngFor="let member of committee">
-    <img src="{{member.img}}" alt="">
-    <p>{{member.name}}</p>
-    <p [innerHTML]=member.profession></p>
+  <div class="speaker-rectangle" data-aos="fade-up">
+    <div class="speaker-square" *ngFor="let member of committee">
+      <img src="{{ member.img }}" alt="" />
+      <p>{{ member.name }}</p>
+      <p [innerHTML]="member.profession"></p>
+    </div>
   </div>
-  </div>
 
-  <div class="n1 Mpink">Learning Objectives</div>
+  <div class="n1 Mpink">Objectifs d’apprentissage</div>
 
-  
-    <ul>
-      <li data-aos="fade-up" *ngFor="let lo of lo">
-        <div>&#10003;</div><p>
-            {{lo.txt}}
-        </p>
-      
-      </li>
-    </ul>
+  <ul>
+    <li data-aos="fade-up" *ngFor="let lo of lo">
+      <div>&#10003;</div>
+      <p>
+        {{ lo.txt }}
+      </p>
+    </li>
+  </ul>
 
-<div class="n1 Spink">Cases</div>
+  <div class="n1 Spink">Cas</div>
 
- <div class="cases"  data-aos-easing="ease-in-out-back">
-  
-    <div data-aos="fade-up" *ngFor="let case of Cases" (click) = "sendTo(case.href)">
-      <img src={{case.img}} alt="" />
+  <div class="cases" data-aos-easing="ease-in-out-back">
+    <div
+      data-aos="fade-up"
+      *ngFor="let case of Cases"
+      (click)="sendTo(case.href)"
+    >
+      <img src="{{ case.img }}" alt="" />
       <div class="bottom">
-          <h1>{{case.h1}}</h1>
-        {{case.p}}
+        <h1>{{ case.h1 }}</h1>
+        {{ case.p }}
       </div>
     </div>
-
   </div>
-
 </div>

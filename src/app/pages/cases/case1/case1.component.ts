@@ -65,23 +65,23 @@ export class Case1Component {
     });
 
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_01',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_01',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_02',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_02',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_03',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_03',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_01',
-      'FMW_003_CASE1_04',
+      'FMW_003_FR_Case_01',
+      'FMW_003_FR_CASE1_04',
       3
     );
 
@@ -92,7 +92,7 @@ export class Case1Component {
   }
   BACK() {
     if (this.count == 0) {
-      window.open('Home', '_self');
+      window.open('Accueil', '_self');
     }
     this.count--;
   }
@@ -105,7 +105,7 @@ export class Case1Component {
       (this.Answer[0] && id == 0 && !this.submitted[0])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -116,7 +116,7 @@ export class Case1Component {
       (this.Answer[1] && id == 2 && !this.submitted[1])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -127,7 +127,7 @@ export class Case1Component {
       (this.Answer[2] && id == 4 && !this.submitted[2])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -138,14 +138,14 @@ export class Case1Component {
       (this.Answer[3] && id == 6 && !this.submitted[3])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
       // this.onSubmit(id);
     }
     if (this.count == 8) {
-      window.open('PatientCases/case2', '_self');
+      window.open('PatientCas/case2', '_self');
     }
     this.count++;
   }
@@ -190,53 +190,53 @@ export class Case1Component {
 
     // stop the process here if form is invalid
     if (!this.registerForm.value.name.toString() && id == 0) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 0) {
       this.submitted[0] = true;
       this.Answer[0] = this.registerForm.value.name.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_01',
-        'FMW_003_CASE1_01',
+        'FMW_003_FR_Case_01',
+        'FMW_003_FR_CASE1_01',
         this.Answer[0],
         this.authService
       );
     }
     if (!this.registerForm.value.name2.toString() && id == 2) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 2) {
       this.submitted[1] = true;
       this.Answer[1] = this.registerForm.value.name2.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_01',
-        'FMW_003_CASE1_02',
+        'FMW_003_FR_Case_01',
+        'FMW_003_FR_CASE1_02',
         this.Answer[1],
         this.authService
       );
     }
     if (!this.registerForm.value.name3.toString() && id == 4) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 4) {
       this.submitted[2] = true;
       this.Answer[2] = this.registerForm.value.name3.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_01',
-        'FMW_003_CASE1_03',
+        'FMW_003_FR_Case_01',
+        'FMW_003_FR_CASE1_03',
         this.Answer[2],
         this.authService
       );
     }
     if (!this.registerForm.value.name4.toString() && id == 6) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 6) {
       this.submitted[3] = true;
       this.Answer[3] = this.registerForm.value.name4.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_01',
-        'FMW_003_CASE1_04',
+        'FMW_003_FR_Case_01',
+        'FMW_003_FR_CASE1_04',
         this.Answer[3],
         this.authService
       );
@@ -253,7 +253,7 @@ export class Case1Component {
 
   AnswerPro(id: number) {
     if (id == 0) {
-      return 'There is no ‘right’ answer but the question is to engage thought around what you would do. Dr. Bari will provide additional context in his next video.';
+      return 'Il n\'y a pas de « bonne » réponse. Il s’agit de réfléchir à ce que vous feriez. Le Dr. Bari fournira un contexte supplémentaire dans sa prochaine vidéo.';
     }
     if (id == 2) {
       return this.Answer[1].includes('b)') &&
@@ -262,8 +262,8 @@ export class Case1Component {
           this.Answer[1].includes('c)') ||
           this.Answer[1].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is b). 2nd generation basal analogues have a lower risk of hypoglycemia. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est b): La 2<sup>e</sup> génération d\'analogues basaux présente un risque moindre d\'hypoglycémie. ';
     }
     if (id == 4) {
       return this.Answer[2].includes('a)') &&
@@ -272,15 +272,15 @@ export class Case1Component {
           this.Answer[2].includes('c)') ||
           this.Answer[2].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is a). Insulin pen devices should be primed every time before dosing. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est a):	Les stylos à insuline doivent être amorcés chaque fois avant le dosage. ';
     }
     if (id == 6) {
       return this.Answer[3].includes('a)') &&
         this.Answer[3].includes('c)') &&
         !(this.Answer[3].includes('b)') || this.Answer[3].includes('d)'))
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answers are a) and c). Increase insulin glargine dose and reassess injection technique. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'Les réponses correctes sont a) and c): Augmenter la dose d\'insuline glargine et réévaluer la technique d\'injection. ';
     }
 
     return '';
@@ -303,7 +303,7 @@ export class Case1Component {
 
   peerAnswersQuestion1() {
     this.authService
-      .peerAnswers('FMW_003_Case_01', 'FMW_003_CASE1_01')
+      .peerAnswers('FMW_003_FR_Case_01', 'FMW_003_FR_CASE1_01')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -342,7 +342,7 @@ export class Case1Component {
 
   peerAnswersQuestion2() {
     this.authService
-      .peerAnswers('FMW_003_Case_01', 'FMW_003_CASE1_02')
+      .peerAnswers('FMW_003_FR_Case_01', 'FMW_003_FR_CASE1_02')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -372,7 +372,7 @@ export class Case1Component {
 
   peerAnswersQuestion3() {
     this.authService
-      .peerAnswers('FMW_003_Case_01', 'FMW_003_CASE1_03')
+      .peerAnswers('FMW_003_FR_Case_01', 'FMW_003_FR_CASE1_03')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -402,7 +402,7 @@ export class Case1Component {
 
   peerAnswersQuestion4() {
     this.authService
-      .peerAnswers('FMW_003_Case_01', 'FMW_003_CASE1_04')
+      .peerAnswers('FMW_003_FR_Case_01', 'FMW_003_FR_CASE1_04')
       .pipe(first())
       .subscribe({
         next: (data) => {

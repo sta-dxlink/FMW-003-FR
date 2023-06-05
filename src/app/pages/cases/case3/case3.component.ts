@@ -64,23 +64,23 @@ export class Case3Component {
     });
 
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_01',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_01',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_02',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_02',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_03',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_03',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_03',
-      'FMW_003_CASE3_04',
+      'FMW_003_FR_Case_03',
+      'FMW_003_FR_CASE3_04',
       3
     );
 
@@ -93,7 +93,7 @@ export class Case3Component {
 
   BACK() {
     if (this.count == 0) {
-      window.open('PatientCases/case2', '_self');
+      window.open('PatientCas/cas2', '_self');
     }
     this.count--;
   }
@@ -106,7 +106,7 @@ export class Case3Component {
       (this.Answer[0] && id == 0 && !this.submitted[0])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -117,7 +117,7 @@ export class Case3Component {
       (this.Answer[1] && id == 2 && !this.submitted[1])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -128,7 +128,7 @@ export class Case3Component {
       (this.Answer[2] && id == 4 && !this.submitted[2])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -139,14 +139,14 @@ export class Case3Component {
       (this.Answer[3] && id == 6 && !this.submitted[3])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
       // this.onSubmit(id);
     }
     if (this.count == 8) {
-      window.open('PatientCases/case4', '_self');
+      window.open('PatientCas/cas4', '_self');
     }
     this.count++;
   }
@@ -191,20 +191,20 @@ export class Case3Component {
 
     // stop the process here if form is invalid
     if (!this.registerForm.value.name.toString() && id == 0) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 0) {
       this.submitted[0] = true;
       this.Answer[0] = this.registerForm.value.name.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_03',
-        'FMW_003_CASE3_01',
+        'FMW_003_FR_Case_03',
+        'FMW_003_FR_CASE3_01',
         this.Answer[0],
         this.authService
       );
     }
     if (!this.registerForm.value.name2.toString() && id == 2) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 2) {
    
@@ -212,34 +212,34 @@ export class Case3Component {
       this.Answer[1] = this.registerForm.value.name2.toString();
 
       this.storageService.sendQuestion(
-        'FMW_003_Case_03',
-        'FMW_003_CASE3_02',
+        'FMW_003_FR_Case_03',
+        'FMW_003_FR_CASE3_02',
         this.Answer[1],
         this.authService
       );
     }
     if (!this.registerForm.value.name3.toString() && id == 4) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 4) {
       this.submitted[2] = true;
       this.Answer[2] = this.registerForm.value.name3.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_03',
-        'FMW_003_CASE3_03',
+        'FMW_003_FR_Case_03',
+        'FMW_003_FR_CASE3_03',
         this.Answer[2],
         this.authService
       );
     }
     if (!this.registerForm.value.name4.toString() && id == 6) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 6) {
       this.submitted[3] = true;
       this.Answer[3] = this.registerForm.value.name4.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_03',
-        'FMW_003_CASE3_04',
+        'FMW_003_FR_Case_03',
+        'FMW_003_FR_CASE3_04',
         this.Answer[3],
         this.authService
       );
@@ -254,11 +254,11 @@ export class Case3Component {
           this.Answer[0].includes('b)') ||
           this.Answer[0].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is c), screen for hypoglycemia. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est c). Dépister l\'hypoglycémie';
     }
     if (id == 2) {
-      return 'This patient is a candidate for CGM.  The purpose was to poll physicians to see how they would respond.';
+      return 'Ce patient est candidat au SCG.  L\'objectif était de sonder les médecins pour voir comment ils réagiraient.';
     }
     if (id == 4) {
       return this.Answer[2].includes('d)') &&
@@ -267,15 +267,15 @@ export class Case3Component {
           this.Answer[2].includes('b)') ||
           this.Answer[2].includes('c)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is d). It is correlated with time-in-range.';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est d). Elle est corrélée avec le temps passé dans l\'intervalle cible';
     }
     if (id == 6) {
       return this.Answer[3].includes('a)') &&
         this.Answer[3].includes('b)') &&
         !(this.Answer[3].includes('c)') || this.Answer[3].includes('d)'))
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answers are a) and b). The correct course of action for Steve would be to reduce his insulin glargine dose and to change him to a 2<sup>nd</sup> generation insulin analogue. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : "Les bonnes réponses sont a et b. L'action correcte pour Steve serait de réduire sa dose d'insuline glargine et de passer à un analogue de l'insuline de 2<sup>ème</sup> génération.";
     }
 
     return '';
@@ -305,7 +305,7 @@ export class Case3Component {
 
   peerAnswersQuestion1() {
     this.authService
-      .peerAnswers('FMW_003_Case_03', 'FMW_003_CASE3_01')
+      .peerAnswers('FMW_003_FR_Case_03', 'FMW_003_FR_CASE3_01')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -335,7 +335,7 @@ export class Case3Component {
 
   peerAnswersQuestion2() {
     this.authService
-      .peerAnswers('FMW_003_Case_03', 'FMW_003_CASE3_02')
+      .peerAnswers('FMW_003_FR_Case_03', 'FMW_003_FR_CASE3_02')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -359,7 +359,7 @@ export class Case3Component {
 
   peerAnswersQuestion3() {
     this.authService
-      .peerAnswers('FMW_003_Case_03', 'FMW_003_CASE3_03')
+      .peerAnswers('FMW_003_FR_Case_03', 'FMW_003_FR_CASE3_03')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -389,7 +389,7 @@ export class Case3Component {
 
   peerAnswersQuestion4() {
     this.authService
-      .peerAnswers('FMW_003_Case_03', 'FMW_003_CASE3_04')
+      .peerAnswers('FMW_003_FR_Case_03', 'FMW_003_FR_CASE3_04')
       .pipe(first())
       .subscribe({
         next: (data) => {

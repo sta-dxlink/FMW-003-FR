@@ -4,16 +4,16 @@ export interface Question {
 }
 export const Learning_Objectives = [
   {
-    txt: 'Determine the time when to initiate basal insulin and how to optimize this treatment option in type 2 diabetes',
+    txt: 'Déterminer quand instaurer l’insuline basale et comment optimiser cette option thérapeutique dans le diabète de type 2',
   },
   {
-    txt: 'Recognize the different basal insulin options, including biosimilars, and understand when to intensify therapy',
+    txt: 'Passer en revue les options de traitement lorsqu’on demande à un patient utilisant une insuline basale de passer à un biosimilaire ',
   },
   {
-    txt: 'Explain the role of time-in-range measurements to optimize glycemic control and potential role in reducing short and long-term risk in patients with type 2 diabetes using insulin',
+    txt: 'Expliquer le rôle que jouent les mesures du temps passé dans l’intervalle cible pour optimiser le contrôle de la glycémie et leur rôle potentiel dans la réduction du risque à court et à long terme chez les patients atteints de diabète de type 2 sous insuline ',
   },
   {
-    txt: 'Determine candidates and titration of patients on fixed-ratio combination (FRC) basal insulin',
+    txt: 'Déterminer les candidats à l’insuline basale en proportions fixes et le titrage des patients',
   },
 ];
 
@@ -22,19 +22,21 @@ export const Case1 = [
     num1: 0,
     num2: 0,
     video: '816217653',
-    src: './assets/imgs/case1-reena.jpeg',
+    src: './assets/imgs/cas1-rennaQ1.png',
     Question:
-      '1. If Reena was your patient, what would be your course of action? (Please check all that apply)',
+      '1. Si Reena était votre patiente, que feriez-vous? (Veuillez cocher toutes les réponses qui s’appliquent.)',
     choices: [
-      { choice: 'a)  Increase dose of semaglutide to 2.0 mg weekly' },
-      { choice: 'b)  Intensify diet and physical activity' },
-      { choice: 'c)  Add sulfonylurea' },
-      { choice: 'd)  Add pioglitazone' },
-      { choice: 'e)  Add acarbose' },
-      { choice: 'f)  Add basal insulin' },
+      { choice: 'a) Augmenter la dose de semaglutide à 2,0 mg par semaine ' },
+      {
+        choice: 'b)  Intensifier le régime alimentaire et l’activité physiqu',
+      },
+      { choice: 'c)  Ajouter de la sulfonylurée ' },
+      { choice: 'd)  Ajouter de la pioglitazone ' },
+      { choice: 'e)  Ajouter de l’acarbose' },
+      { choice: 'f)  Ajouter de l’insuline basale ' },
       {
         choice:
-          'g)  Change semaglutide to fixed-ratio combination (GLP-1 RA/insulin)',
+          'g)  Passer à une association insuline/AR GLP-1 en proportions fixes',
       },
     ],
   },
@@ -42,20 +44,20 @@ export const Case1 = [
     num1: 2,
     num2: 1,
     video: '816237677',
-    src: './assets/imgs/case1-extended.png',
+    src: './assets/imgs/cas1-rennaQ1.png',
     Question:
-      '2. Reena is going to be initiated on basal insulin. Which of the following statements is TRUE? ',
+      '2. Reena va être mise sous insuline basale. Lequel des énoncés suivants est VRAI?',
     choices: [
-      { choice: 'a)	The starting dose should be 5 units daily ' },
+      { choice: 'a)	La dose initiale doit être de 5 unités par jour' },
       {
         choice:
-          'b)	2<sup>nd</sup> generation basal analogues have a lower risk of hypoglycemia',
+          "b) La 2<sup>e</sup> génération d'analogues basaux présente un risque moindre d'hypoglycémie",
       },
       {
         choice:
-          'c)	The titration for all basal insulins should be increased daily ',
+          'c)	La titration de toutes les insulines basales doit être augmentée quotidiennement ',
       },
-      { choice: 'd)	Target fasting blood glucose should be < 10.0 mmol/L ' },
+      { choice: 'd)	La cible de la glycémie à jeun doit être < 10,0 mmol/L' },
     ],
   },
   {
@@ -64,22 +66,22 @@ export const Case1 = [
     video: '816237927',
     src: './assets/imgs/case1-extended.png',
     Question:
-      '3. The clinician provides training for patient on basal insulin. Which of the following statements is TRUE? ',
+      "3. Le clinicien assure la formation de la patiente à l'insuline basale. Lequel des énoncés suivants est VRAI?",
     choices: [
       {
         choice:
-          'a)	Insulin pen devices should be primed every time before dosing',
+          'a)	Les stylos à insuline doivent être amorcés chaque fois avant le dosage',
       },
       {
         choice:
-          'b)	She must use an alcohol swab on the insulin pen cartridge and on the injection site ',
+          "b)	 Elle doit utiliser un tampon imbibé d'alcool sur la cartouche du stylo à insuline et sur le site d'injection ",
       },
       {
         choice:
-          'c)	8 mm pen is preferred for most patients with overweight or obesity ',
+          "c)	L'aiguille de 8 mm est préférable pour la plupart des patients en surpoids ou obèses  ",
       },
       {
-        choice: 'd)	It is important that she pinch prior to injection ',
+        choice: "d)	Il est important de pincer avant l'injection ",
       },
     ],
   },
@@ -87,21 +89,21 @@ export const Case1 = [
     num1: 6,
     num2: 3,
     video: '816238158',
-    src: './assets/imgs/case1-extended.png',
+    src: './assets/imgs/cas1-rennaQ4.png',
     Question:
-      '4. Reena is in to see her clinician 4 months later. She titrated her insulin, but she is still not reaching A1C target. What would be your course of action? (Please check all that apply)',
+      "4. Reena se rend chez son clinicien quatre mois plus tard. Elle a titré son insuline, mais elle n'atteint toujours pas la cible de HbA1c. Quelle serait votre ligne de conduite? (Veuillez cocher toutes les réponses qui s'appliquent.) ",
     choices: [
       {
-        choice: 'a)	Increase insulin glargine dose',
+        choice: "a) Augmenter la dose d'insuline glargine",
       },
       {
-        choice: 'b)	Increase semaglutide dose',
+        choice: 'b)	Augmenter la dose de semaglutide ',
       },
       {
-        choice: 'c)	Reassess injection technique ',
+        choice: "c)	Réévaluer la technique d'injection ",
       },
       {
-        choice: 'd)	Add prandial insulin ',
+        choice: "d)	Ajouter l'insuline prandiale ",
       },
     ],
   },
@@ -113,7 +115,8 @@ export const Case2 = [
     num2: 0,
     video: '816289160',
     src: './assets/imgs/case2-ruby.jpeg',
-    Question: '1. If Ruby was your patient, what A1C target would you set?',
+    Question:
+      '1. Si Ruby était votre patiente, quel cible de HbA1c fixeriez-vous?',
     choices: [
       { choice: 'a) ≤ 6.5%' },
       { choice: 'b) ≤ 7.0%' },
@@ -127,20 +130,23 @@ export const Case2 = [
     video: '816289191',
     src: './assets/imgs/case2-extended.png',
     Question:
-      '2. Ruby has a brother and sister with type 2 diabetes and she is the only one using insulin. She wants to know if insulin should be used in seniors. Which of the following statements is TRUE?',
+      "2. Ruby a un frère et une sœur atteints de diabète de type 2 et elle est la seule à utiliser de l'insuline. Elle veut savoir si l'insuline devrait être utilisée chez les personnes âgées. Lequel des énoncés suivants est VRAI?",
     choices: [
       {
         choice:
-          'a) The risk of basal insulin in older adults exceeds the benefits',
+          "a) Le risque de l'insuline basale chez les personnes âgées dépasse les bénéfices",
       },
       {
         choice:
-          'b) Generally, a higher A1C target is preferred over using insulin in older adults',
+          "b)  En général, il est préférable de viser un taux de HbA1c plus élevé plutôt que d'utiliser de l'insuline chez les personnes âgées",
       },
-      { choice: 'c) Insulin is an effective and safe option in older adults' },
       {
         choice:
-          'd) Insulin is the preferred 2<sup>nd</sup> line agent in older adults with CKD',
+          "c) L'insuline est une solution efficace et sûre pour les personnes âgées",
+      },
+      {
+        choice:
+          "d) L'insuline est le traitement de 3e intention privilégié chez les personnes âgées atteintes de MRC",
       },
     ],
   },
@@ -148,31 +154,39 @@ export const Case2 = [
     num1: 4,
     num2: 2,
     video: '816289257',
-    src: './assets/imgs/case2-extended.png',
+    src: './assets/imgs/case2-extended.Q3png.png',
     Question:
-      '3. How would you manage the question regarding the switch to a biosimilar insulin?',
+      '3. Comment géreriez-vous la question concernant le passage à une insuline biosimilaire?',
     choices: [
-      { choice: 'a) Switch to the biosimilar insulin' },
-      { choice: 'b) Switch to a 2<sup>nd</sup> generation basal insulin' },
+      { choice: "a) Passer à l'insuline biosimilaire" },
+      {
+        choice: 'b) Passer à une insuline basale de 2<sup>e</sup> génération',
+      },
       {
         choice:
-          'c) I would tell her to stay on her current insulin and pay the difference',
+          'c) Je lui dirais de conserver son insuline actuelle et de payer la différence',
       },
-      { choice: 'd) I would prescribe whatever basal insulin is covered' },
+      { choice: "d) Je prescrirais n'importe quelle insuline basale couverte" },
     ],
   },
   {
     num1: 6,
     num2: 3,
     video: '816289319',
-    src: './assets/imgs/case2-extended.png',
+    src: './assets/imgs/case2-extended.Q4.png',
     Question:
-      '4. How would you switch Ruby from her current insulin to a 2<sup>nd</sup> generation basal insulin analogue? (Please check all that apply)',
+      "4. Comment faire passer Ruby de son insuline actuelle à une insuline basale analogue de 2<sup>e</sup> génération? (Veuillez cocher toutes les réponses qui s'appliquent.)",
     choices: [
-      { choice: 'a) Reduce her dose by 20% and administer at the same time' },
-      { choice: 'b) Switch to 2<sup>nd</sup> generation at the same dose' },
-      { choice: 'c) Ensure she is monitoring her glucose daily' },
-      { choice: 'd) Provide training on the new pen and administration' },
+      { choice: "a) Réduire sa dose de 20 % et l'administrer en même temps" },
+      { choice: 'b) Passer à la 2<sup>e</sup> génération à la même dose' },
+      {
+        choice:
+          "c) S'assurer qu'elle surveille son taux de glucose quotidiennement",
+      },
+      {
+        choice:
+          "d) Fournir une formation sur le nouveau stylo et l'administration",
+      },
     ],
   },
 ];
@@ -184,12 +198,12 @@ export const Case3 = [
     video: '816289426',
     src: './assets/imgs/case3-steve.jpeg',
     Question:
-      '1. If Steve was your patient what would be your course of action? (Please check all that apply)',
+      "1. Si Steve était votre patient, quel serait votre plan d'action? (Veuillez cocher toutes les réponses qui s'appliquent.)",
     choices: [
-      { choice: 'a) No changes at this time' },
-      { choice: 'b) Reduce dose of insulin glargine' },
-      { choice: 'c) Screen for hypoglycemia' },
-      { choice: 'd) Discontinue linagliptin' },
+      { choice: "a) N'apporter aucun changement pour le moment" },
+      { choice: "b) Réduire la dose d'insuline glargine" },
+      { choice: "c) Dépister l'hypoglycémie" },
+      { choice: 'd) Arrêter la linagliptine' },
     ],
   },
   {
@@ -198,8 +212,8 @@ export const Case3 = [
     video: '816289451',
     src: './assets/imgs/case3-extendedQ2.png',
     Question:
-      '2. Steve mentions that his current blood glucose meter is old. He wants to know if he would be a candidate for continuous glucose monitoring (CGM). Would you consider CGM for this patient?',
-    choices: [{ choice: 'a) Yes', }, { choice: 'b) No' }],
+      "2. Steve mentionne que son lecteur de glycémie actuel est vieux. Il veut savoir s'il serait un candidat pour une surveillance continue du glucose (SCG). Envisageriez-vous une SCG pour ce patient? ",
+    choices: [{ choice: 'a) Oui' }, { choice: 'b) Non' }],
     name: 'name2',
   },
   {
@@ -208,26 +222,37 @@ export const Case3 = [
     video: '816513388',
     src: './assets/imgs/case3-extendedQ3.png',
     Question:
-      '3. Steve wants to know the significance of glycemic variability. Which of the following statements is TRUE? (please check all that apply)',
+      "3. Steve veut connaître la signification de la variabilité glycémique. Lequel des énoncés suivants est VRAI? (Veuillez cocher toutes les réponses qui s'appliquent.)",
     choices: [
-      { choice: 'a) It is only a marker for hypoglycemia risk' },
-      { choice: 'b) It is rarely an issue in patients taking insulin' },
-      { choice: 'c) The target is < 20%' },
-      { choice: 'd) It is correlated with time-in-range' },
+      {
+        choice:
+          "a) Il s'agit uniquement d'un marqueur du risque d'hypoglycémie",
+      },
+      {
+        choice: "b) C'est rarement un problème chez les patients sous insuline",
+      },
+      { choice: 'c) La cible est < 20 %' },
+      {
+        choice:
+          "d) Elle est corrélée avec le temps passé dans l'intervalle cible",
+      },
     ],
   },
   {
     num1: 6,
     num2: 3,
     video: '816289602',
-    src: './assets/imgs/case3-extended.png',
+    src: './assets/imgs/case3-extendedQ4.png',
     Question:
-      '4. Steve reduced his insulin dose and provides this AGP after 2 weeks. What would be your course of action? (please check all that apply)',
+      "4. Steve a réduit sa dose d'insuline et fournit ce PGA après deux semaines. Quelle serait votre ligne de conduite? (Veuillez cocher toutes les réponses qui s'appliquent.)",
     choices: [
-      { choice: 'a) Reduce insulin glargine dose' },
-      { choice: 'b) Change to 2<sup>nd</sup> generation insulin analogue' },
-      { choice: 'c) Encourage more lifestyle modifications' },
-      { choice: 'd) Nothing at this point' },
+      { choice: "a) Réduire la dose d'insuline glargine" },
+      {
+        choice:
+          "b) Passer à un analogue de l'insuline de 2<sup>e</sup> génération",
+      },
+      { choice: 'c) Encourager davantage de modifications du mode de vie' },
+      { choice: 'd) Rien à ce stade' },
     ],
   },
 ];
@@ -239,12 +264,12 @@ export const Case4 = [
     video: '817699663',
     src: './assets/imgs/case4-lenore.jpeg',
     Question:
-      '1. If Lenore was your patient, what would be your course of action? (Please check all that apply)',
+      "1. Si Lenore était votre patiente, quelle serait votre ligne de conduite? (Veuillez cocher toutes les réponses qui s'appliquent.)",
     choices: [
-      { choice: 'a) Increase insulin glargine dose' },
-      { choice: 'b) Change DPP4i to GLP-1 RA' },
-      { choice: 'c) Add prandial insulin' },
-      { choice: 'd) Add sulfonylurea' },
+      { choice: "a) Augmenter la dose d'insuline glargine" },
+      { choice: "b) Remplacer l'inhibiteur DPP-4 par AR GLP-1" },
+      { choice: "c) Ajouter l'insuline prandiale" },
+      { choice: 'd) Ajouter de la sulfonylurée' },
     ],
   },
   {
@@ -253,14 +278,14 @@ export const Case4 = [
     video: '817699720',
     src: './assets/imgs/case4-extended.png',
     Question:
-      '2. Lenore returns 3 months later. She is still above A1C target. What would be your course of action?',
+      '2. Lenore revient trois mois plus tard. Son taux de HbA1c se situe toujours au-dessus du taux cible. Quelle serait votre ligne de conduite?',
     choices: [
-      { choice: 'a) Increase insulin glargine dose' },
-      { choice: 'b) Add GLP-1 RA and discontinue sitagliptin' },
-      { choice: 'c) Add insulin secretagogue' },
+      { choice: "a) Augmenter la dose d'insuline glargine " },
+      { choice: 'b) Ajouter AR GLP-1 et arrêter la sitagliptine' },
+      { choice: 'c) Ajouter un sécrétagogue de l\'insuline' },
       {
         choice:
-          'd) Change sitagliptin and GLP-1 RA/insulin to fixed ratio combination',
+          'd) Passer sitagliptine et AR GLP-1/insuline à des proportions fixes',
       },
     ],
   },
@@ -270,12 +295,12 @@ export const Case4 = [
     video: '817699797',
     src: './assets/imgs/case4-Q3.png',
     Question:
-      '3. Lenore is interested in trying the FRC. She is being considered for insulin glargine and lixisenatide fixed ratio combination. What dose would she start on?',
+      '3. Lenore est intéressée à essayer les proportions fixes Elle pourrait bénéficier d\'une association d\'insuline glargine et de lixisenatide à proportions fixes. Par quelle dose devrait-elle commencer?',
     choices: [
-      { choice: 'a) 15 units' },
-      { choice: 'b) 30 units' },
-      { choice: 'c) 42 units' },
-      { choice: 'd) 60 units' },
+      { choice: 'a) 15 unités' },
+      { choice: 'b) 30 unités' },
+      { choice: 'c) 42 unités' },
+      { choice: 'd) 60 unités' },
     ],
     name: 'name3',
   },
@@ -285,14 +310,14 @@ export const Case4 = [
     video: '817699933',
     src: './assets/imgs/case4-Q4.png',
     Question:
-      '4. Lenore calls the office and mentions that she has had some stomach upset since starting the FRC. What is the most appropriate course of action?',
+      '4. Lenore appelle le bureau et mentionne qu\'elle a des maux d\'estomac depuis qu\'elle a commencé les proportions fixes. Quel est le meilleur plan d\'action?',
     choices: [
-      { choice: 'a) Discontinue the FRC' },
-      { choice: 'b) Lower the dose to 15 units QAM' },
-      { choice: 'c) Move the dose to supper time' },
+      { choice: 'a) Abandonner les proportions fixes' },
+      { choice: 'b) Diminuer la dose à 15 unités tous les matins' },
+      { choice: 'c) Déplacer la dose à l\'heure du souper' },
       {
         choice:
-          'd) Encourage her to eat slow, avoid fried or spicy foods and eat smaller portions',
+          'd) L\'encourager à manger lentement, à éviter les aliments frits ou épicés et à manger de plus petites portions',
       },
     ],
   },
@@ -301,28 +326,28 @@ export const Case4 = [
 export const mEvalo = [
   {
     number: 'q1',
-    Q: 'Please indicate your profession:',
-    sa: 'Family Physician ',
-    a: 'General Practitioner ',
-    n: 'Nurse',
-    d: 'Other',
+    Q: 'Veuillez indiquer votre profession:',
+    sa: 'Médecin de famille ',
+    a: 'Médecin généraliste  ',
+    n: 'Infirmier',
+    d: 'Autre',
   },
   {
     number: 'q2',
-    Q: 'This program content enhanced my knowledge',
+    Q: 'Le contenu de ce programme a amélioré mes connaissances',
     sa: '1',
     a: '2',
     n: '3',
     d: '4',
     sd: '5',
     title:
-      '<br /> Please indicate the degree to which you agree with the statements below, using the following scale: <br />' +
-      '1 Strongly agree; 2 Agree; 3 Neutral; 4 Disagree; 5 Strongly disagree<br /><br />' +
-      'The Program ',
+      "<br /> Veuillez indiquer dans quelle mesure vous êtes d'accord avec les énoncés ci-dessous, en utilisant l'échelle suivante: <br />" +
+      "1 Tout à fait d'accord; 2 D'accord; 3 Neutre; 4 Pas d'accord; 5 Pas du tout d'accord<br /><br />" +
+      'Le programme',
   },
   {
     number: 'q3',
-    Q: 'The program was relevant to me',
+    Q: 'Le programme était pertinent pour moi',
     sa: '1',
     a: '2',
     n: '3',
@@ -331,7 +356,7 @@ export const mEvalo = [
   },
   {
     number: 'q4',
-    Q: 'The program met the stated learning objectives',
+    Q: "Le programme a permis d'atteindre les objectifs d'apprentissage énoncés",
     sa: '1',
     a: '2',
     n: '3',
@@ -340,7 +365,7 @@ export const mEvalo = [
   },
   {
     number: 'q5',
-    Q: 'Updates discussed in the program will impact my practice',
+    Q: 'Les mises à jour présentées dans le programme auront une incidence sur ma pratique',
     sa: '1',
     a: '2',
     n: '3',
@@ -349,7 +374,7 @@ export const mEvalo = [
   },
   {
     number: 'q6',
-    Q: 'The format was effective',
+    Q: 'Le format était efficace',
     sa: '1',
     a: '2',
     n: '3',
@@ -358,7 +383,7 @@ export const mEvalo = [
   },
   {
     number: 'q7',
-    Q: 'This activity was of value to me in my current role',
+    Q: "Cette activité m'a été utile dans mes fonctions actuelles",
     sa: '1',
     a: '2',
     n: '3',
@@ -367,7 +392,7 @@ export const mEvalo = [
   },
   {
     number: 'q8',
-    Q: 'The program was well-organized',
+    Q: 'Le programme était bien structuré',
     sa: '1',
     a: '2',
     n: '3',
@@ -376,7 +401,7 @@ export const mEvalo = [
   },
   {
     number: 'q9',
-    Q: 'The program was unbiased',
+    Q: 'Le programme était impartial',
     sa: '1',
     a: '2',
     n: '3',
@@ -385,17 +410,17 @@ export const mEvalo = [
   },
   {
     number: 'q10',
-    Q: 'Presented the program clearly and effectively ',
+    Q: 'A présenté le programme de façon claire et efficace',
     sa: '1',
     a: '2',
     n: '3',
     d: '4',
     sd: '5',
-    title: '<br /> <u>The Speakers</u> <br /> Dr. Bari',
+    title: '<br /> <u>Les conférenciers </u> <br /> Dr. Bari',
   },
   {
     number: 'q11',
-    Q: 'Demonstrated good leadership qualities',
+    Q: 'A démontré de bonnes qualités de leadership',
     sa: '1',
     a: '2',
     n: '3',
@@ -404,17 +429,17 @@ export const mEvalo = [
   },
   {
     number: 'q12',
-    Q: ' Presented the program clearly and effectively ',
+    Q: ' A présenté le programme de façon claire et efficace ',
     sa: '1',
     a: '2',
     n: '3',
     d: '4',
     sd: '5',
-    title: '<br />Dr. Arnaout ',
+    title: '<br />Dre. Arnaout ',
   },
   {
     number: 'q13',
-    Q: 'Demonstrated good leadership qualities',
+    Q: 'A démontré de bonnes qualités de leadership',
     sa: '1',
     a: '2',
     n: '3',
@@ -423,17 +448,17 @@ export const mEvalo = [
   },
   {
     number: 'q14',
-    Q: ' Presented the program clearly and effectively ',
+    Q: ' A présenté le programme de façon claire et efficace ',
     sa: '1',
     a: '2',
     n: '3',
     d: '4',
     sd: '5',
-    title: '<br />Dr. Reichert',
+    title: '<br />Dre. Reichert',
   },
   {
     number: 'q15',
-    Q: 'Demonstrated good leadership qualities',
+    Q: 'A démontré de bonnes qualités de leadership',
     sa: '1',
     a: '2',
     n: '3',
@@ -442,7 +467,7 @@ export const mEvalo = [
   },
   {
     number: 'q16',
-    Q: '1.	How likely would you be to recommend this program to a friend or colleague?( Not all all likely 0, Extremely likely 10)',
+    Q: '1.	Dans quelle mesure est-il probable que vous présentiez ce programme à un collègue ou un ami?( Pas du tout probable 0, Extrêmement probable 10)',
     sa: '0',
     a: '1',
     n: '2',
@@ -454,46 +479,7 @@ export const mEvalo = [
     height: '8',
     nine: '9',
     ten: '10',
-    title: 'Please answer the following questions:',
+    title: 'Veuillez répondre aux questions suivantes:',
   },
 ];
 
-export const Evallq = [
-
-  {
-    number: 'q16',
-    Q: '2.	Describe two positive features of this program:',
-  },
-  {
-    number: 'q17',
-    Q: '3.	Would you change anything about the program? If so, please explain. ',
-  },
-  {
-    number: 'q18',
-    Q: '4.	What did you learn from this program that you plan to use in your practice?',
-  },
-
-  {
-    number: 'q19',
-    Q: '5.	Please list any other related topics that you would like to see covered in future learning programs:',
-  },
-  {
-    number: 'q20',
-    Q: '6.	Are there any gaps in care or other challenges that you would like to discuss?',
-  },
-
-  {
-    number: 'q21',
-    Q: '7.	Did you perceive any degree of bias in any part of the program? If yes, please describe',
-  },
-
-  {
-    number: 'q22',
-    Q: '8.	Did the activity respect the CQDPCM Code of Ethics (http://cqdpcm.ca)?  Yes  No',
-  },
-
-  {
-    number: 'q23',
-    Q: '9.	General comments and suggestions:',
-  },
-];

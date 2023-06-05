@@ -64,23 +64,23 @@ export class Case2Component {
     });
 
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_01',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_01',
       0
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_02',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_02',
       1
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_03',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_03',
       2
     );
     this.checkCase_Question1Completion(
-      'FMW_003_Case_02',
-      'FMW_003_CASE2_04',
+      'FMW_003_FR_Case_02',
+      'FMW_003_FR_CASE2_04',
       3
     );
 
@@ -92,7 +92,7 @@ export class Case2Component {
 
   BACK() {
     if (this.count == 0) {
-      window.open('PatientCases/case1', '_self');
+      window.open('PatientCas/cas1', '_self');
     }
     this.count--;
   }
@@ -105,7 +105,7 @@ export class Case2Component {
       (this.Answer[0] && id == 0 && !this.submitted[0])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -116,7 +116,7 @@ export class Case2Component {
       (this.Answer[1] && id == 2 && !this.submitted[1])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -127,7 +127,7 @@ export class Case2Component {
       (this.Answer[2] && id == 4 && !this.submitted[2])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
@@ -138,14 +138,14 @@ export class Case2Component {
       (this.Answer[3] && id == 6 && !this.submitted[3])
     ) {
       this.sendNotification(
-        'Be sure to complete the question and click the submit button'
+        'Veillez à répondre à la question et cliquez sur le bouton "soumettre".'
       );
       return;
     } else {
       // this.onSubmit(id);
     }
     if (this.count == 8) {
-      window.open('PatientCases/case3', '_self');
+      window.open('PatientCas/cas3', '_self');
     }
     this.count++;
   }
@@ -190,53 +190,53 @@ export class Case2Component {
 
     // stop the process here if form is invalid
     if (!this.registerForm.value.name.toString() && id == 0) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 0) {
       this.submitted[0] = true;
       this.Answer[0] = this.registerForm.value.name.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_02',
-        'FMW_003_CASE2_01',
+        'FMW_003_FR_Case_02',
+        'FMW_003_FR_CASE2_01',
         this.Answer[0],
         this.authService
       );
     }
     if (!this.registerForm.value.name2.toString() && id == 2) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 2) {
       this.submitted[1] = true;
       this.Answer[1] = this.registerForm.value.name2.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_02',
-        'FMW_003_CASE2_02',
+        'FMW_003_FR_Case_02',
+        'FMW_003_FR_CASE2_02',
         this.Answer[1],
         this.authService
       );
     }
     if (!this.registerForm.value.name3.toString() && id == 4) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 4) {
       this.submitted[2] = true;
       this.Answer[2] = this.registerForm.value.name3.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_02',
-        'FMW_003_CASE2_03',
+        'FMW_003_FR_Case_02',
+        'FMW_003_FR_CASE2_03',
         this.Answer[2],
         this.authService
       );
     }
     if (!this.registerForm.value.name4.toString() && id == 6) {
-      this.sendNotification('Be sure to complete the question');
+      this.sendNotification('Veillez à répondre à la question');
       return;
     } else if (id == 6) {
       this.submitted[3] = true;
       this.Answer[3] = this.registerForm.value.name4.toString();
       this.storageService.sendQuestion(
-        'FMW_003_Case_02',
-        'FMW_003_CASE2_04',
+        'FMW_003_FR_Case_02',
+        'FMW_003_FR_CASE2_04',
         this.Answer[3],
         this.authService
       );
@@ -245,14 +245,14 @@ export class Case2Component {
 
   AnswerPro(id: number) {
     if (id == 0) {
-      return this.Answer[0].includes('a)') &&
+      return this.Answer[0].includes('b)') &&
         !(
-          this.Answer[0].includes('b)') ||
+          this.Answer[0].includes('a)') ||
           this.Answer[0].includes('c)') ||
           this.Answer[0].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is b), ≤ 7.0%. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : 'La bonne réponse est b): ≤ 7.0%. ';
     }
     if (id == 2) {
       return this.Answer[1].includes('c)') &&
@@ -261,19 +261,19 @@ export class Case2Component {
           this.Answer[1].includes('b)') ||
           this.Answer[1].includes('d)')
         )
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answer is c). Insulin is an effective and safe option in older adults.  ';
+        ? 'Votre réponse est exacte &#10004; '
+        : "La bonne réponse est c). L'insuline est une solution efficace et sûre pour les personnes âgées.  ";
     }
     if (id == 4) {
-      return 'There is no right or wrong answer here. The purpose is to engage the thought process to start thinking about best way to manage this patient. ';
+      return 'Il n\'y a pas de bonne ou de mauvaise réponse. L\'objectif est d\'engager le processus de réflexion pour commencer à penser à la meilleure façon de prendre en charge ce patient. ';
     }
     if (id == 6) {
       return this.Answer[3].includes('b)') &&
         this.Answer[3].includes('c)') &&
         this.Answer[3].includes('d)') &&
         !this.Answer[3].includes('a)')
-        ? 'Your answer is correct &#10004; '
-        : 'The correct answers are b), c), and, d). The patient should switch to a 2nd generation at the same dose, while the physician ensures that she is monitoring her glucose daily and provides training on the new pen and administration. ';
+        ? 'Votre réponse est exacte &#10004; '
+        : "Les réponses correctes sont b), c), et d).<br> Passage aux analogues de l'insuline basale de 2<sup>e</sup> génération <br> Passage de l'insuline une fois par jour :<br> • Il n'y a pas de bioéquivalence entre les types d'insuline, de sorte qu'une modification de la réponse peut se produire<br> • Passer à une dose équivalente (mêmes unités que précédemment) <br>Passage de l'insuline basale deux fois par jour :<br> • Envisager d'administrer 80 % de la dose quotidienne totale <br>Surveillance <br>• Il est important de surveiller la glycémie et d'ajuster l'insuline basale en fonction d'une glycémie à jeun cible de 4,0-7,0 mmol/L, ce qui peut nécessiter un ajustement de la dose<br> • Surveiller les signes et les symptômes de l'hypoglycémie <br>Formation<br> S'assurer que le patient est à l'aise avec le nouveau stylo et l'administration";
     }
 
     return '';
@@ -304,7 +304,7 @@ export class Case2Component {
 
   peerAnswersQuestion1() {
     this.authService
-      .peerAnswers('FMW_003_Case_02', 'FMW_003_CASE2_01')
+      .peerAnswers('FMW_003_FR_Case_02', 'FMW_003_FR_CASE2_01')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -334,7 +334,7 @@ export class Case2Component {
 
   peerAnswersQuestion2() {
     this.authService
-      .peerAnswers('FMW_003_Case_02', 'FMW_003_CASE2_02')
+      .peerAnswers('FMW_003_FR_Case_02', 'FMW_003_FR_CASE2_02')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -364,7 +364,7 @@ export class Case2Component {
 
   peerAnswersQuestion3() {
     this.authService
-      .peerAnswers('FMW_003_Case_02', 'FMW_003_CASE2_03')
+      .peerAnswers('FMW_003_FR_Case_02', 'FMW_003_FR_CASE2_03')
       .pipe(first())
       .subscribe({
         next: (data) => {
@@ -394,7 +394,7 @@ export class Case2Component {
 
   peerAnswersQuestion4() {
     this.authService
-      .peerAnswers('FMW_003_Case_02', 'FMW_003_CASE2_04')
+      .peerAnswers('FMW_003_FR_Case_02', 'FMW_003_FR_CASE2_04')
       .pipe(first())
       .subscribe({
         next: (data) => {
