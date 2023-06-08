@@ -20,7 +20,7 @@
     Une fois que vous avez terminé, vous pouvez cliquer sur « Certificat » pour
     voir votre certificat personnalisé que vous pouvez télécharger ou imprimer
     et sauvegarder pour vos dossiers. Vous pouvez voir ce que vous avez accompli
-    en défilant jusqu'à "Suivi des progrès" ci-dessous.
+    en défilant jusqu'à « Suivi des progrès » ci-dessous.
   </div>
   <div class="buttonzy">
     <button
@@ -227,11 +227,9 @@
   class="certificate-section"
   style="display: none"
 >
-  <img src=".\assets\imgs\MicrosoftTeams-image.png" alt="Certificat Online" />
+  <img src=".\assets\imgs\Certificate en ligne_07juin2023.jpg" alt="Certificat Online" />
   <!-- size change so i have to cahngethe scss -->
-  <span id="name">{{ user.firstName }} {{ user.lastName }}</span>
-  <span id="date">{{
-    currentDate$ | async | date : dateFormat : "GMT" : locale
-  }}</span>
-  <span id="hours">{{ hours }}</span>
+   <span id="name">{{ user.firstName }} {{ user.lastName }}</span>
+<span id="date">{{ dateOfCompletion | date : 'longDate' : undefined : 'fr' }}</span>
+ <span id="hours">{{ hours }}</span>
 </div>

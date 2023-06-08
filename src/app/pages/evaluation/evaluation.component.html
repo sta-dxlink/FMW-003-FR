@@ -83,7 +83,7 @@
         <div class="options">
           1.
             <mat-form-field>
-                <mat-label>1<sup>er</sup> caractéristiques</mat-label>
+                <mat-label></mat-label>
                 <textarea name="q17" formControlName="q17" matInput  class="form-control" ></textarea>
                 <mat-error class="text-danger"><strong> **Champ obligatoire**</strong></mat-error> 
             </mat-form-field>
@@ -92,7 +92,7 @@
         <div class="options">
           2.
             <mat-form-field>
-                <mat-label>2<sup>ème</sup> caractéristiques</mat-label>
+                <mat-label></mat-label>
                 <textarea name="q18" formControlName="q18" matInput  class="form-control" ></textarea>
                 <mat-error class="text-danger"><strong> **Champ obligatoire**</strong></mat-error> 
             </mat-form-field>
@@ -101,7 +101,7 @@
 
       <li class="quest"  data-aos="fade-up">
         <p>
-        3. Changeriez-vous quelque chose au programme?  <i>Le cas échéant, veuillez expliuer en quoi.</i>
+        3. Changeriez-vous quelque chose au programme?  <i>Le cas échéant, veuillez expliquer en quoi.</i>
         <br>   <br>  
          <label class="container" >
             <input type="radio" name="number3" (click)="quesionOptions(1,true)"  />Oui 
@@ -170,7 +170,7 @@
 
       <li class="quest"  data-aos="fade-up">
         <p>
-        7. Avez-vous perçu un quelconque degré de partialité dans l’une ou l’autre partie du programme? <i>Si oui, veuillez décrire en quoi.</i>
+        7. Avez-vous perçu un quelconque degré de partialité dans l'une ou l'autre des parties du programme? <i>Si oui, veuillez décrire en quoi.</i>
         <br>   <br>  
          <label class="container" >
             <input type="radio" name="number7" (click)="quesionOptions(2,true)"  />Oui 
@@ -184,7 +184,7 @@
     
         <div class="options" *ngIf="option2">
             <mat-form-field>
-                <mat-label>Describe</mat-label>
+                <mat-label>Décrire</mat-label>
                 <textarea  name="q23" formControlName="q23" matInput  class="form-control" ></textarea>
                 <mat-error class="text-danger"><strong> **Champ obligatoire**</strong></mat-error> 
                   <mat-error  *ngIf="

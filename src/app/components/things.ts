@@ -21,7 +21,7 @@ export const Case1 = [
   {
     num1: 0,
     num2: 0,
-    video: '816217653',
+    video: '824876175',
     src: './assets/imgs/cas1-rennaQ1.png',
     Question:
       '1. Si Reena était votre patiente, que feriez-vous? (Veuillez cocher toutes les réponses qui s’appliquent.)',
@@ -43,7 +43,7 @@ export const Case1 = [
   {
     num1: 2,
     num2: 1,
-    video: '816237677',
+    video: '824876278',
     src: './assets/imgs/cas1-rennaQ1.png',
     Question:
       '2. Reena va être mise sous insuline basale. Lequel des énoncés suivants est VRAI?',
@@ -63,7 +63,7 @@ export const Case1 = [
   {
     num1: 4,
     num2: 2,
-    video: '816237927',
+    video: '824876607',
     src: './assets/imgs/case1-extended.png',
     Question:
       "3. Le clinicien assure la formation de la patiente à l'insuline basale. Lequel des énoncés suivants est VRAI?",
@@ -88,7 +88,7 @@ export const Case1 = [
   {
     num1: 6,
     num2: 3,
-    video: '816238158',
+    video: '824876831',
     src: './assets/imgs/cas1-rennaQ4.png',
     Question:
       "4. Reena se rend chez son clinicien quatre mois plus tard. Elle a titré son insuline, mais elle n'atteint toujours pas la cible de HbA1c. Quelle serait votre ligne de conduite? (Veuillez cocher toutes les réponses qui s'appliquent.) ",
@@ -113,7 +113,7 @@ export const Case2 = [
   {
     num1: 0,
     num2: 0,
-    video: '816289160',
+    video: '824876971',
     src: './assets/imgs/case2-ruby.jpeg',
     Question:
       '1. Si Ruby était votre patiente, quel cible de HbA1c fixeriez-vous?',
@@ -127,7 +127,7 @@ export const Case2 = [
   {
     num1: 2,
     num2: 1,
-    video: '816289191',
+    video: '824877018',
     src: './assets/imgs/case2-extended.png',
     Question:
       "2. Ruby a un frère et une sœur atteints de diabète de type 2 et elle est la seule à utiliser de l'insuline. Elle veut savoir si l'insuline devrait être utilisée chez les personnes âgées. Lequel des énoncés suivants est VRAI?",
@@ -153,7 +153,7 @@ export const Case2 = [
   {
     num1: 4,
     num2: 2,
-    video: '816289257',
+    video: '824877095',
     src: './assets/imgs/case2-extended.Q3png.png',
     Question:
       '3. Comment géreriez-vous la question concernant le passage à une insuline biosimilaire?',
@@ -172,7 +172,7 @@ export const Case2 = [
   {
     num1: 6,
     num2: 3,
-    video: '816289319',
+    video: '824877168',
     src: './assets/imgs/case2-extended.Q4.png',
     Question:
       "4. Comment faire passer Ruby de son insuline actuelle à une insuline basale analogue de 2<sup>e</sup> génération? (Veuillez cocher toutes les réponses qui s'appliquent.)",
@@ -195,7 +195,7 @@ export const Case3 = [
   {
     num1: 0,
     num2: 0,
-    video: '816289426',
+    video: '824877325',
     src: './assets/imgs/case3-steve.jpeg',
     Question:
       "1. Si Steve était votre patient, quel serait votre plan d'action? (Veuillez cocher toutes les réponses qui s'appliquent.)",
@@ -209,7 +209,7 @@ export const Case3 = [
   {
     num1: 2,
     num2: 1,
-    video: '816289451',
+    video: '824877377',
     src: './assets/imgs/case3-extendedQ2.png',
     Question:
       "2. Steve mentionne que son lecteur de glycémie actuel est vieux. Il veut savoir s'il serait un candidat pour une surveillance continue du glucose (SCG). Envisageriez-vous une SCG pour ce patient? ",
@@ -219,7 +219,7 @@ export const Case3 = [
   {
     num1: 4,
     num2: 2,
-    video: '816513388',
+    video: '824877606',
     src: './assets/imgs/case3-extendedQ3.png',
     Question:
       "3. Steve veut connaître la signification de la variabilité glycémique. Lequel des énoncés suivants est VRAI? (Veuillez cocher toutes les réponses qui s'appliquent.)",
@@ -241,7 +241,7 @@ export const Case3 = [
   {
     num1: 6,
     num2: 3,
-    video: '816289602',
+    video: '824877879',
     src: './assets/imgs/case3-extendedQ4.png',
     Question:
       "4. Steve a réduit sa dose d'insuline et fournit ce PGA après deux semaines. Quelle serait votre ligne de conduite? (Veuillez cocher toutes les réponses qui s'appliquent.)",
@@ -261,7 +261,7 @@ export const Case4 = [
   {
     num1: 0,
     num2: 0,
-    video: '817699663',
+    video: '824878084',
     src: './assets/imgs/case4-lenore.jpeg',
     Question:
       "1. Si Lenore était votre patiente, quelle serait votre ligne de conduite? (Veuillez cocher toutes les réponses qui s'appliquent.)",
@@ -275,14 +275,14 @@ export const Case4 = [
   {
     num1: 2,
     num2: 1,
-    video: '817699720',
+    video: '824878133',
     src: './assets/imgs/case4-extended.png',
     Question:
       '2. Lenore revient trois mois plus tard. Son taux de HbA1c se situe toujours au-dessus du taux cible. Quelle serait votre ligne de conduite?',
     choices: [
       { choice: "a) Augmenter la dose d'insuline glargine " },
       { choice: 'b) Ajouter AR GLP-1 et arrêter la sitagliptine' },
-      { choice: 'c) Ajouter un sécrétagogue de l\'insuline' },
+      { choice: "c) Ajouter un sécrétagogue de l'insuline" },
       {
         choice:
           'd) Passer sitagliptine et AR GLP-1/insuline à des proportions fixes',
@@ -292,10 +292,10 @@ export const Case4 = [
   {
     num1: 4,
     num2: 2,
-    video: '817699797',
+    video: '824878197',
     src: './assets/imgs/case4-Q3.png',
     Question:
-      '3. Lenore est intéressée à essayer les proportions fixes Elle pourrait bénéficier d\'une association d\'insuline glargine et de lixisenatide à proportions fixes. Par quelle dose devrait-elle commencer?',
+      "3. Lenore est intéressée à essayer les proportions fixes Elle pourrait bénéficier d'une association d'insuline glargine et de lixisenatide à proportions fixes. Par quelle dose devrait-elle commencer?",
     choices: [
       { choice: 'a) 15 unités' },
       { choice: 'b) 30 unités' },
@@ -307,17 +307,17 @@ export const Case4 = [
   {
     num1: 6,
     num2: 3,
-    video: '817699933',
+    video: '824878317',
     src: './assets/imgs/case4-Q4.png',
     Question:
-      '4. Lenore appelle le bureau et mentionne qu\'elle a des maux d\'estomac depuis qu\'elle a commencé les proportions fixes. Quel est le meilleur plan d\'action?',
+      "4. Lenore appelle le bureau et mentionne qu'elle a des maux d'estomac depuis qu'elle a commencé les proportions fixes. Quel est le meilleur plan d'action?",
     choices: [
       { choice: 'a) Abandonner les proportions fixes' },
       { choice: 'b) Diminuer la dose à 15 unités tous les matins' },
-      { choice: 'c) Déplacer la dose à l\'heure du souper' },
+      { choice: "c) Déplacer la dose à l'heure du souper" },
       {
         choice:
-          'd) L\'encourager à manger lentement, à éviter les aliments frits ou épicés et à manger de plus petites portions',
+          "d) L'encourager à manger lentement, à éviter les aliments frits ou épicés et à manger de plus petites portions",
       },
     ],
   },

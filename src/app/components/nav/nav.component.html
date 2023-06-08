@@ -1,8 +1,15 @@
 <div class="land" *ngIf="bigbar">
-  <div class="links"><a href="Aide">AIDE</a><a href="">ENGLISH</a></div>
+  <div class="links">
+    <a href="Aide">AIDE</a
+    ><a
+      href="https://dxlink.ca/programs/FMW003Test/
+"
+      >ENGLISH</a
+    >
+  </div>
   <div class="writting">
     <div class="text">
-      <img src=".\assets\imgs\painting-the-patient-journey.png" alt="" />
+      <img src=".\assets\imgs\painting-the-patient-journey_fr.png" alt="" />
       <h1>
         Le diabète de type 2, le rôle de l'insuline et les implications de
         l'intervalle de temps
@@ -34,9 +41,16 @@
         </h2>
       </div>
     </div>
-    <div class="links"><a href="Aide">AIDE</a><a href="">ENGLISH</a></div>
+    <div class="links">
+      <a href="Aide">AIDE</a
+      ><a
+        href="https://dxlink.ca/programs/FMW003Test/
+"
+        >ENGLISH</a
+      >
+    </div>
   </div>
-  <div class="directories" *ngIf="isLoggedIn == 'true'" >
+  <div class="directories" *ngIf="isLoggedIn == 'true'">
     <mat-icon (click)="toggleMenu()" id="mat">reorder</mat-icon>
     <div class="directories" id="rect" *ngIf="menu" [@slideAnimation]>
       <a href="Accueil" id="HOME">ACCUEIL</a

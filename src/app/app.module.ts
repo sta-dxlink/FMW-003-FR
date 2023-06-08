@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +33,7 @@ import { EvaluationComponent } from './pages/evaluation/evaluation.component';
 import { CertificateComponent } from './pages/certificate/certificate.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { LoaderService } from './services/loader.service';
-import { LoadingInterceptor } from './loading.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { LoadingInterceptor } from './loading.interceptor';
     StorageService,
     AuthService,
     AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+
   ],
   bootstrap: [AppComponent],
 })

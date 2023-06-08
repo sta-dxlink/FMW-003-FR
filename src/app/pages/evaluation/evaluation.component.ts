@@ -78,11 +78,11 @@ export class EvaluationComponent {
       q16: ['', [Validators.required]],
       q17: ['', [Validators.required]],
       q18: ['', [Validators.required]],
-      q19: ['Non', [this.requiredIfOption1True()]],
+      q19: ['', [this.requiredIfOption1True()]],
       q20: ['', [Validators.required]],
       q21: ['', ],
       q22: ['', ],
-      q23: ['Non', [this.requiredIfOption2True()]],
+      q23: ['', [this.requiredIfOption2True()]],
       q24: ['', [Validators.required]],
       q25: [''],
     });

@@ -145,7 +145,7 @@ export class Case1Component {
       // this.onSubmit(id);
     }
     if (this.count == 8) {
-      window.open('PatientCas/case2', '_self');
+      window.open('PatientCas/cas2', '_self');
     }
     this.count++;
   }

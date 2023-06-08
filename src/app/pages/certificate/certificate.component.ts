@@ -1,18 +1,15 @@
-import {
-  Component,
-  ElementRef,
-  LOCALE_ID,
-  ViewChild,
-  Inject,
-} from '@angular/core';
-import { first, of } from 'rxjs';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { first,  } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 declare let html2pdf: any;
 // @ts-ignore
 import * as html2pdf from 'html2pdf.js';
 import { User } from 'src/app/components/models/user.models';
-import { formatDate } from '@angular/common';
+//for the french date
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 @Component({
   selector: 'app-certificate',
   templateUrl: './certificate.component.html',
@@ -20,10 +17,8 @@ import { formatDate } from '@angular/common';
 })
 export class CertificateComponent {
   user = {} as User;
-  dateOfCompletion: any;
-  currentDate = new Date();
-  dateFormat = 'dd MMMM yyyy';
-  currentDate$ = of(formatDate(this.currentDate, this.dateFormat, this.locale));
+  dateOfCompletion: Date;
+  formattedDate: string = '';
   Completed: boolean[][] = new Array(5);
   // certificate = false;
   hours = 0;
@@ -31,9 +26,10 @@ export class CertificateComponent {
 
   constructor(
     public authService: AuthService,
-    public storageService: StorageService,
-    @Inject(LOCALE_ID) public locale: string = 'fr-FR' // Set locale to 'fr' for French
-  ) {}
+    public storageService: StorageService
+  ) {
+    this.dateOfCompletion = new Date();
+  }
 
   ngOnInit(): void {
     this.getUserDetails();
@@ -143,8 +139,6 @@ export class CertificateComponent {
       3,
       3
     );
-    this.dateOfCompletion = new Date();
-    console.log('the date is \n\n\n\n\n ', this.dateOfCompletion);
   }
 
   getUserDetails() {
